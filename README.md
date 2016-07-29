@@ -7,7 +7,7 @@ O BRA responsive é um framework de grid responsiva, simples, básico e com um U
 
 - Mobile: retrato - 320px
 - Mobile: paisagem - 480px
-- Tablet: retrato - 767px
+- Tablet: retrato - 768px
 - Notebook/Tablet(paisagem) - 1024px
 - Desktop: 1320px
 
