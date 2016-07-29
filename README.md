@@ -1,3 +1,3 @@
 # BRA-responsive
-A Simple and Clean Framework Responsive Grid in HTML5 and CSS3
-(Um Simples e Clean Plataforma de Grid Responsiva com HTML5 e CSS33)
+<h3>A Simple and Basic Framework Responsive Grid in HTML5 and CSS3<br>
+(Uma Plataforma Simples e Básica de Grid Responsiva com HTML5 e CSS3)</h3>
