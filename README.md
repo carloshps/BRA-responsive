@@ -29,3 +29,11 @@ Nessa primeira versão, a intenção é criar o básico, mas usualmente aplicáv
 ##Suporte a navegadores
 
 Funciona bem no Chrome 52+, Firefox 47+, Safari 9.1+, Opera 38+, Edge 13+, IE 9+
+
+##Direitos autoriais e licença de uso
+
+Todos os direitos reservados a [CarlosHPS Webdesigner](http://www.carloshps.com.br).
+
+Você pode copiar, distribuir, exibir e executar a obra sob as seguintes condições:
+- Atribuição — Você deve dar crédito ao autor original, da forma especificada pelo autor ou licenciante.
+- Uso Não-Comercial — Você não pode utilizar esta obra com finalidades comerciais.
