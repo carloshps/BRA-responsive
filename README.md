@@ -1,4 +1,7 @@
-# BRA responsive BETA 1.0
+# BRA responsive BETA 0.1
+
+![BRA responsive](https://github.com/carloshps/BRA-responsive/blob/master/logo-bra-responsive-framework-css.png)
+
 ###Simples e intuitivo, BRA responsive é um framework front-end para criação de projetos web responsivos e mobile-first.
 
 ##Sobre o BRA responsive
@@ -31,6 +34,27 @@ Nesta versão BETA 1.0, a intenção é criar o básico, mas usualmente aplicáv
 ##Suporte a navegadores
 
 Funciona bem no Chrome 52+, Firefox 47+, Safari 9.1+, Opera 38+, Edge 13+, IE 9+
+
+##Site oficial
+[www.braresponsive.com.br](http://www.braresponsive.com.br).
+
+##Demos
+
+Redimensione a janela do seu navegador e/ou visualize os demos abaixo em dispositivos diferentes para visualizar os resultados da grid responsiva.
+
+[Demo #1](http://braresponsive.com.br/demos/demo-01.html) [Demo #2](http://braresponsive.com.br/demos/demo-02.html) [Demo #3](http://braresponsive.com.br/demos/demo-03.html)
+
+##Próximos passos
+
+- [x] Criação do site oficial
+- [ ] Criação da página **Tipografia**
+- [ ] Criação da página **Elementos Inline**
+- [ ] Criação da página **Listas**
+- [ ] Criação da página **Botões**
+- [ ] Criação da página **Cores**
+- [ ] Criação da página **Tabelas**
+- [ ] Criação da página **Formulário**
+- [ ] Criação da página **Ícones**
 
 ##Direitos autoriais e licença de uso
 
