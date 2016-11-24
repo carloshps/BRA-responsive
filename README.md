@@ -1,4 +1,4 @@
-# BRA responsive BETA 0.1
+# BRA responsive BETA 0.3.1
 
 ![BRA responsive](https://github.com/carloshps/BRA-responsive/blob/master/logo-bra-responsive-framework-css.png)
 
@@ -18,7 +18,7 @@ O BRA responsive é um framework de grid responsiva, simples, básico e com um U
 
 ##Principais características
 
-Nesta versão BETA 1.0, a intenção é criar o básico, mas usualmente aplicável. Portanto, as principais características são:
+Nesta versão BETA, a intenção é criar o básico, mas usualmente aplicável. Portanto, as principais características são:
 
 - Grid com 12 colunas
 - 100% responsivo
@@ -47,11 +47,11 @@ Redimensione a janela do seu navegador e/ou visualize os demos abaixo em disposi
 ##Próximos passos
 
 - [x] Criação do site oficial
-- [ ] Criação da página **Tipografia**
+- [x] Criação da página **Tipografia**
 - [ ] Criação da página **Elementos Inline**
 - [ ] Criação da página **Listas**
 - [ ] Criação da página **Botões**
-- [ ] Criação da página **Cores**
+- [x] Criação da página **Cores**
 - [ ] Criação da página **Tabelas**
 - [ ] Criação da página **Formulário**
 - [ ] Criação da página **Ícones**
