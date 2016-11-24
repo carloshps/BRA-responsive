@@ -51,7 +51,7 @@ Redimensione a janela do seu navegador e/ou visualize os demos abaixo em disposi
 - [ ] Criação da página **Elementos Inline**
 - [ ] Criação da página **Listas**
 - [ ] Criação da página **Botões**
-- [ ] Criação da página **Cores**
+- [x] Criação da página **Cores**
 - [ ] Criação da página **Tabelas**
 - [ ] Criação da página **Formulário**
 - [ ] Criação da página **Ícones**
