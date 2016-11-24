@@ -1,0 +1,623 @@
+/*
+ *      ____  _____
+ *     |  _ \|  __ \     /\                                                _
+ *     | |_) | |__) |   /  \        ________  _________  ____  ____  _____(_)   _____
+ *     |  _ <|  _  /   / /\ \      / ___/ _ \/ ___/ __ \/ __ \/ __ \/ ___/ / | / / _ \
+ *     | |_) | | \ \  / ____ \    / /  /  __(__  ) /_/ / /_/ / / / (__  ) /| |/ /  __/
+ *     |____/|_|  \_\/_/    \_\  /_/   \___/____/ .___/\____/_/ /_/____/_/ |___/\___/
+ *                                             /_/
+ *
+*/
+
+/*=================================================================
+DADOS GERAIS / VERSÃO
+===================================================================
+Projeto: BRA responsive | framework responsive css
+URI: http://www.braresponsive.com.br
+Versão BETA: 0.3.1
+Atualizado em: 23.11.2016
+Autor: CarlosHPS Webdesigner
+Autor URI: http://www.carloshps.com.br
+Github: https://github.com/carloshps/BRA-responsive
+=================================================================*/
+
+/*=================================================================
+INDEX / SUMÁRIO
+===================================================================
+
+0. Reset Normalize.css (minify)
+1. Configuração Geral
+2. Preparação para o grid
+3. Coluna Padrão - Grid Flexível
+4. Grid Responsivo Phone 320px
+5. Grid Responsivo Smartphone 479px
+6. Grid Responsivo Tablet 480px a 767px
+7. Grid Responsivo Laptop 768px a 980px
+8. Grid Responsivo Desktop 981px a 1100px
+9. Grid Responsivo Desktop HD 1101px a 1300px
+10. Grid Responsivo Large Monitor 1301px
+11. Imagem e media responsive
+12. UI Kit Básico
+    12.1. Tipografia
+    12.2. Cores
+13. Elementos & Componentes
+14. Formatação Responsiva
+
+=================================================================*/
+
+/*=================================================================
+0. Reset normalize.css v5.0.0
+MIT License | github.com/necolas/normalize.css
+=================================================================*/
+
+html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type="button"],/* 1 */[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-cancel-button,[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,/* 1 */menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+/*=================================================================
+1. Configuração Geral
+=================================================================*/
+html { box-sizing: border-box; font-size: 1rem; /* 1rem = 16px forma de deixar a tipografia responsiva */}
+
+*, *::before, *::after { box-sizing: inherit;}
+
+/* Estilos gerais da página */
+body{
+   background: #F6F7FB;
+   color: #999;
+   font-family: "Libre Franklin", Helvetica, sans-serif;
+   font-weight: 300;
+   line-height: 1.375;
+   margin: 0;
+   padding: 0;
+   text-align: left;
+}
+
+/* Formatação elementos gerais do layout */
+header, footer, section, article, aside{padding: 0.625em 0.938em;}
+
+/* Formatação do container, classe que conterá as linhas, colunas e conteúdo */
+.container{
+    display:block;
+    height:auto;
+    margin: 0 auto; /* centralizando o conteúdo */
+    max-width: 81.250em;  /* 1320px largura máxima que comporá a grid */
+    max-width: 100%; !important /* largura full */
+    padding:0;
+    position:relative;
+    *zoom: 1; /* iniciando o zoom com o padrão de 100% */
+    -webkit-box-sizing:border-box;
+	       -moz-box-sizing:border-box;
+	            box-sizing:border-box;
+}
+
+/* Clearing */
+.row:before, .row:after, .container:before, .container:after { content: ""; display: table;}
+.row:after, .container:after { clear: both;}
+
+/*=================================================================
+2. Preparação para o grid
+=================================================================*/
+
+/* Prefixo para o grid */
+[class*='bra-']{
+   float: left;
+   width: 100%;
+}
+
+/* Conteúdo COM espaçamento entre as colunas - gutters */
+.cont{ margin: 10px;}
+
+/* Conteúdo SEM espaçamento entre as colunas - no gutters */
+.cont-nogutter{ margin: 0px;}
+
+/* Formatação dos blocos de conteúdo */
+.cont, .cont-nogutter{
+   background: #fff; /* retire e/ou edite */
+   border-radius: 2px; /* retire e/ou edite */
+   box-shadow: 0 2px 1px rgba(0,0,0,.2); /* retire e/ou edite */
+   padding: .5em;
+}
+
+/*=================================================================
+3. Coluna Padrão - Grid Flexível (prefixo: .bra-)
+=================================================================*/
+.bra-1{width: 8.33333%;}
+.bra-2{width: 16.66667%;}
+.bra-3{width: 25%;}
+.bra-4{width: 33.33332%;}
+.bra-5{width: 41.66665%;}
+.bra-6{width: 49.99998%;}
+.bra-7{width: 58.33331%;}
+.bra-8{width: 66.66664%;}
+.bra-9{width: 74.99997%;}
+.bra-10{width: 83.33333%;}
+.bra-11{width: 91.66663%;}
+.bra-12{width: 100%;}
+
+/*=================================================================
+4. Grid Responsivo Phone 320px (prefixo: .bra-phone-)
+=================================================================*/
+@media screen and (max-width: 320px){
+
+.bra-phone-1{width: 8.33333%;}
+.bra-phone-2{width: 16.66667%;}
+.bra-phone-3{width: 25%;}
+.bra-phone-4{width: 33.33332%;}
+.bra-phone-5{width: 41.66665%;}
+.bra-phone-6{width: 49.99998%;}
+.bra-phone-7{width: 58.33331%;}
+.bra-phone-8{width: 66.66664%;}
+.bra-phone-9{width: 74.99997%;}
+.bra-phone-10{width: 83.33333%;}
+.bra-phone-11{width: 91.66663%;}
+.bra-phone-12{width: 100%;}
+
+}
+
+/*=================================================================
+5. Grid Responsivo Mobile 479px (prefixo: .bra-smart-)
+=================================================================*/
+@media screen and (max-width: 479px){
+
+.bra-smart-1{ width: 8.33333%;}
+.bra-smart-2{ width: 16.66667%;}
+.bra-smart-3{ width: 25%;}
+.bra-smart-4{ width: 33.33332%;}
+.bra-smart-5{ width: 41.66665%;}
+.bra-smart-6{ width: 49.99998%;}
+.bra-smart-7{ width: 58.33331%;}
+.bra-smart-8{ width: 66.66664%;}
+.bra-smart-9{ width: 74.99997%;}
+.bra-smart-10{ width: 83.33333%;}
+.bra-smart-11{ width: 91.66663%;}
+.bra-smart-12{ width: 100%;}
+
+}
+
+/*=================================================================
+6. Grid Responsivo Tablet 480px a 767px (prefixo: .bra-tablet-)
+=================================================================*/
+@media screen and ( min-width: 480px ) {
+
+.bra-tablet-1{ width: 8.33333%;}
+.bra-tablet-2{ width: 16.66667%;}
+.bra-tablet-3{ width: 25%;}
+.bra-tablet-4{ width: 33.33332%;}
+.bra-tablet-5{ width: 41.66665%;}
+.bra-tablet-6{ width: 49.99998%;}
+.bra-tablet-7{ width: 58.33331%;}
+.bra-tablet-8{ width: 66.66664%;}
+.bra-tablet-9{ width: 74.99997%;}
+.bra-tablet-10{ width: 83.33333%;}
+.bra-tablet-11{ width: 91.66663%;}
+.bra-tablet-12{ width: 100%;}
+
+}
+
+/*=================================================================
+7. Grid Responsivo Laptop 768px a 980px (prefixo: .bra-laptop-)
+=================================================================*/
+
+@media screen and ( min-width: 768px ) {
+
+.bra-laptop-1{ width: 8.33333%;}
+.bra-laptop-2{ width: 16.66667%;}
+.bra-laptop-3{ width: 25%;}
+.bra-laptop-4{ width: 33.33332%;}
+.bra-laptop-5{ width: 41.66665%;}
+.bra-laptop-6{ width: 49.99998%;}
+.bra-laptop-7{ width: 58.33331%;}
+.bra-laptop-8{ width: 66.66664%;}
+.bra-laptop-9{ width: 74.99997%;}
+.bra-laptop-10{ width: 83.33333%;}
+.bra-laptop-11{ width: 91.66663%;}
+.bra-laptop-12{ width: 100%;}
+
+}
+
+/*==============================================================================
+8. Grid Responsivo Desktop 981px a 1100px (prefixo: .bra-desktop-)
+==============================================================================*/
+@media screen and ( min-width: 981px ) {
+
+.bra-desktop-1{ width: 8.33333%;}
+.bra-desktop-2{ width: 16.66667%;}
+.bra-desktop-3{ width: 25%;}
+.bra-desktop-4{ width: 33.33332%;}
+.bra-desktop-5{ width: 41.66665%;}
+.bra-desktop-6{ width: 49.99998%;}
+.bra-desktop-7{ width: 58.33331%;}
+.bra-desktop-8{ width: 66.66664%;}
+.bra-desktop-9{ width: 74.99997%;}
+.bra-desktop-10{ width: 83.33333%;}
+.bra-desktop-11{ width: 91.66663%;}
+.bra-desktop-12{ width: 100%;}
+
+}
+
+/*=============================================================================
+9. Grid Responsivo Desktop HD 1101px a 1300px (prefixo: .bra-hd-)
+=============================================================================*/
+@media screen and ( min-width: 1101px )  {
+
+.bra-hd-1{ width: 8.33333%;}
+.bra-hd-2{ width: 16.66667%;}
+.bra-hd-3{ width: 25%;}
+.bra-hd-4{ width: 33.33332%;}
+.bra-hd-5{ width: 41.66665%;}
+.bra-hd-6{ width: 49.99998%;}
+.bra-hd-7{ width: 58.33331%;}
+.bra-hd-8{ width: 66.66664%;}
+.bra-hd-9{ width: 74.99997%;}
+.bra-hd-10{ width: 83.33333%;}
+.bra-hd-11{ width: 91.66663%;}
+.bra-hd-12{ width: 100%;}
+
+}
+
+/*=================================================================
+10. Grid Responsivo Large Monitor 1301px (prefixo: .bra-monitor-)
+=================================================================*/
+@media screen and ( min-width: 1301px ) {
+
+.bra-monitor-1{ width: 8.33333%;}
+.bra-monitor-2{ width: 16.66667%;}
+.bra-monitor-3{ width: 25%;}
+.bra-monitor-4{ width: 33.33332%;}
+.bra-monitor-5{ width: 41.66665%;}
+.bra-monitor-6{ width: 49.99998%;}
+.bra-monitor-7{ width: 58.33331%;}
+.bra-monitor-8{ width: 66.66664%;}
+.bra-monitor-9{ width: 74.99997%;}
+.bra-monitor-10{ width: 83.33333%;}
+.bra-monitor-11{ width: 91.66663%;}
+.bra-monitor-12{ width: 100%;}
+
+}
+
+/*=================================================================
+11. Imagem e media responsive
+=================================================================*/
+img.responsive-img,
+video.responsive-video {
+   height: auto;
+   max-width: 100%;
+}
+/* Formatação de legenda para imagem a ser criado após a inserção do img */
+img + p {
+   font-size: 0.8rem;
+   font-style: italic;
+   margin: 0;
+}
+
+/*=================================================================
+12. UI Kit Básico
+=================================================================*/
+
+/* 12.1 - Tipografia
+.................................................................*/
+
+h1, .h1 { font-size: 4.250rem; letter-spacing: -.2rem; line-height: 4.455rem;} /* 68px/71px */
+h2, .h2 { font-size: 3.438rem; letter-spacing: -.15rem; line-height: 3.555rem;} /* 55px/57px */
+h3, .h3 { font-size: 2.625rem; letter-spacing: -.1rem; line-height: 2.815rem;} /* 42px/45px */
+h4, .h4 { font-size: 2.125rem; letter-spacing: -.1rem; line-height: 2.255rem;} /* 34px/36px */
+h5, .h5 { font-size: 1.625rem; letter-spacing: -.08rem; line-height: 1.815rem;} /* 26px/29px */
+h6, .h6 { font-size: 1.313rem; letter-spacing: -.05rem; line-height: 1.5rem;} /* 21px/24px */
+
+h1, .h1, h2, .h2, h3, .h3 {font-family: "Work Sans", Arial, sans-serif;}
+h4, .h4, h5, .h5 {font-family: "Libre Franklin", sans-serif;}
+h6, .h6 {font-family: "Droid Serif", serif;}
+
+/* subcabeçalho */
+h1 > .heading, h2 > .heading, h3 > .heading, h4 > .heading, h5 > .heading, h6 > .heading{font-size: 60%;line-height: 1em;}
+
+/* título e subtítulo */
+.title, .subtitle{word-break: break-word;}
+.title:not(:last-child), .subtitle:not(:last-child){margin-bottom: 1.25em;}
+.title + .subtitle{margin-top: -1.25em;}
+.subtitle, .subtitle-1, .subtitle-2, .subtitle-3{font-weight: 300;}
+.title + .subtitle-1{margin-top: -1.5em;}
+.title + .subtitle-2{margin-top: -1.95em;}
+.title + .subtitle-3{margin-top: -2.35em;}
+
+/* Todos os elementos, p, ul, ol, dl, blockquote, hr, pre, table, form e figure,
+receberão um espeçamento na base, todas as vezes que forem seguidos de algum
+elemento de cabeçalho, h2, h3, h4, h5 ou h6 */
+p + h2, p + h3, p + h4, p + h5,p + h6,
+ul + h2, ul + h3, ul + h4, ul + h5, ul + h6,
+ol + h2, ol + h3, ol + h4, ol + h5, ol + h6,
+dl + h2, dl + h3, dl + h4, dl + h5, dl + h6,
+blockquote + h2, blockquote + h3, blockquote + h4, blockquote + h5, blockquote + h6, hr + h2, hr + h3, hr + h4, hr + h5, hr + h6,
+pre + h2, pre + h3, pre + h4, pre + h5, pre + h6,
+table + h2, table + h3, table + h4, table + h5, table + h6,
+form + h2, form + h3, form + h4, form + h5, form + h6,
+figure + h2, figure + h3, figure + h4, figure + h5, figure + h6 {
+  margin-top: 2rem; }
+
+/* Font Work Sans 600 e 900 */
+.work-900, .work-600{font-family: "Work Sans", Arial, sans-serif;}
+.work-900 {font-weight: 900;}
+.work-600 {font-weight: 600;}
+
+/* Font Libre Franklin 300 e 400*/
+.libre-300, .libre-400, .heading{font-family: "Libre Franklin", Arial, sans-serif;}
+.libre-300, .heading {font-weight: 300;}
+.libre-400 {font-weight: 400;}
+
+/* Font Lora 400 400i*/
+.droid-400, .droid-400i, .heading-2, .heading-3{font-family: "Droid Serif", serif;}
+.droid-400, .heading-2 {font-weight: 400;}
+.droid-400i, .heading-3 {font-weight: 400i; font-style: italic;}
+
+/* Parágrafo */
+p{margin-top: 1.25em;}
+
+/* Parágrafo de Destaque */
+.manchete {
+	font-family: "Droid Serif", serif;
+	font-size: 1.75rem;
+	line-height: 1.25;
+	margin-bottom: 1.5em;
+ }
+
+/* Bloco de citação */
+blockquote {
+	background: #F6F7FB;
+	border-left: 3px solid #ccd1d9;
+	color: #8F8F8F;
+    font-family: "Droid serif", serif;
+	margin: 0 0 1.25em;
+	padding: 0.625em 1.25em;
+ }
+	blockquote .small, blockquote footer, blockquote small {
+		color: #A4A4A4;
+		display: block;
+		font-size: 0.75rem;
+		line-height: 1.45;
+	 }
+	blockquote .small:before, blockquote footer:before, blockquote small:before {content: '\0bb \0a0';}
+
+/* Tamanhos do texto */
+.font-10, small, .small{font-size: 0.625rem; line-height: 0.75rem;} /* 10px/12px / 0.625rem */
+.font-13{font-size: 0.8125rem; line-height: 0.9375rem; } /* 13px/15px / 0.8125rem */
+.font-16{font-size: 1rem;line-height:  1.125rem; } /* 16px/18px / 1rem */
+.font-21{font-size: 1.313rem; line-height: 1.438rem;} /* 21px/23px / 1.313rem */
+.font-26, .big{font-size: 1.625rem; line-height: 1.75rem;} /* 26px/28px / 1.625rem */
+.font-34, .mega{font-size: 2.125rem;line-height: 2.25rem;} /* 34px/36px / 2.125rem */
+.font-55, .jumbo{font-size: 3.438rem;line-height: 3.563rem;} /* 42px/44px / 3.438rem */
+
+/* Alinhamento, posicionamento e preenchimento de conteúdo */
+
+.left{text-align: left;} /* alinhado à esquerda */
+.right{text-align: right;} /* alinhado à direita */
+.center{text-align: center;} /* alinhado ao centro */
+.justify{text-align: justify;} /* alinhamento justificado */
+.height-auto{height: 100%;} /* altura 100% */
+.nopadding{padding: 0;} /* sem preenchimento interno */
+.nomargin{margin: 0;} /* sem margens */
+
+/* Padding - Preenchimento Interno de 0 a 20 px */
+
+.padding5{padding: 0.313em;} /* 5px em todos os lados */
+.padding5lr{padding:0 0.313em;} /* 5px à esquerda e direita */
+.padding5tb{padding:0.313em 0;} /* 5px à base e topo */
+.padding5l{padding:0 0 0 0.313em;} /* 5px só à esquerda */
+.padding5r{padding:0 0.313em 0 0;} /* 5px só à direita */
+.padding5t{padding:0.313em 0 0 0;} /* 5px só no topo */
+.padding5b{padding:0 0 0.313em 0;} /* 5px só na base */
+
+.padding10{padding: 0.625em;} /* 10px em todos os lados */
+.padding10lr{padding:0 0.625em;} /* 10px à esquerda e direita */
+.padding10tb{padding:0.625em 0;} /* 10px à base e topo */
+.padding10l{padding:0 0 0 0.625em;} /* 10px só à esquerda */
+.padding10r{padding:0 0.625em 0 0;} /* 10px só à direita */
+.padding10t{padding:0.625em 0 0 0;} /* 10px só no topo */
+.padding10b{padding:0 0 0.625em 0;} /* 10px só na base */
+
+.padding15{padding: 0.938em;} /* 15px em todos os lados */
+.padding15lr{padding:0 0.938em;} /* 15px à esquerda e direita */
+.padding15tb{padding:0.938em 0;} /* 15px à base e topo */
+.padding15l{padding:0 0 0 0.938em;} /* 15px só à esquerda */
+.padding15r{padding:0 0.938em 0 0;} /* 15px só à direita */
+.padding15t{padding:0.938em 0 0 0;} /* 15px só no topo */
+.padding15b{padding:0 0 0.938em 0;} /* 15px só na base */
+
+.padding20{padding: 1.250em;} /* 20px em todos os lados */
+.padding20lr{padding:0 1.250em;} /* 20px à esquerda e direita */
+.padding20tb{padding:1.250em 0;} /* 20px à base e topo */
+.padding20l{padding:0 0 0 1.250em;} /* 20px só à esquerda */
+.padding20r{padding:0 1.250em 0 0;} /* 20px só à direita */
+.padding20t{padding:1.250em 0 0 0;} /* 20px só no topo */
+.padding20b{padding:0 0 1.250em 0;} /* 20px só na base */
+
+/* Margin - Espaçamento Externo de 0 a 20 px */
+
+.margin5{margin: 0.313em;} /* 5px em todos os lados */
+.margin5lr{margin:0 0.313em;} /* 5px à esquerda e direita */
+.margin5tb{margin:0.313em 0;} /* 5px à base e topo */
+.margin5l{margin:0 0 0 0.313em;} /* 5px só à esquerda */
+.margin5r{margin:0 0.313em 0 0;} /* 5px só à direita */
+.margin5t{margin:0.313em 0 0 0;} /* 5px só no topo */
+.margin5b{margin:0 0 0.313em 0;} /* 5px só na base */
+
+.margin10{margin: 0.625em;} /* 10px em todos os lados */
+.margin10lr{margin:0 0.625em;} /* 10px à esquerda e direita */
+.margin10tb{margin:0.625em 0;} /* 10px à base e topo */
+.margin10l{margin:0 0 0 0.625em;} /* 10px só à esquerda */
+.margin10r{margin:0 0.625em 0 0;} /* 10px só à direita */
+.margin10t{margin:0.625em 0 0 0;} /* 10px só no topo */
+.margin10b{margin:0 0 0.625em 0;} /* 10px só na base */
+
+.margin15{margin: 0.938em;} /* 15px em todos os lados */
+.margin15lr{margin:0 0.938em;} /* 15px à esquerda e direita */
+.margin15tb{margin:0.938em 0;} /* 15px à base e topo */
+.margin15l{margin:0 0 0 0.938em;} /* 15px só à esquerda */
+.margin15r{margin:0 0.938em 0 0;} /* 15px só à direita */
+.margin15t{margin:0.938em 0 0 0;} /* 15px só no topo */
+.margin15b{margin:0 0 0.938em 0;} /* 15px só na base */
+
+.margin20{margin: 1.250em;} /* 20px em todos os lados */
+.margin20lr{margin:0 1.250em;} /* 20px à esquerda e direita */
+.margin20tb{margin:1.250em 0;} /* 20px à base e topo */
+.margin20l{margin:0 0 0 1.250em;} /* 20px só à esquerda */
+.margin20r{margin:0 1.250em 0 0;} /* 20px só à direita */
+.margin20t{margin:1.250em 0 0 0;} /* 20px só no topo */
+.margin20b{margin:0 0 1.250em 0;} /* 20px só na base */
+
+/* 12.2 - Cores
+.................................................................*/
+
+/* Verde Limão */
+.cb1a{background: #C9DD37;} .cb1b{background: #D2E35B;} .cb1c{background: #DDEA80;}
+.c1a{color: #C9DD37;} .c1b{color: #D2E35B;} .c1c{color: #DDEA80;}
+/* Verde Amazônia */
+.cb2a{background: #98B75E;} .cb2b{background: #AAC47B;} .cb2c{background: #BDD198;}
+.c2a{color: #98B75E;} .c2b{color: #AAC47B;} .c2c{color: #BDD198;}
+/* Verde Esmeralda */
+.cb3a{background: #48CCBC;} .cb3b{background: #69D6C8;} .cb3c{background: #8ADFD5;}
+.c3a{color: #48CCBC;} .c3b{color: #69D6C8;} .c3c{color: #8ADFD5;}
+/* Azul Jeans */
+.cb4a{background: #4268A8;} .cb4b{background: #577DBD;} .cb4c{background: #7695C9}
+.c4a{color: #4268A8;} .c4b{color: #577DBD;} .c4c{color: #7695C9;}
+/* Azul Oceano */
+.cb5a{background: #338AE1;} .cb5b{background: #589FE7;} .cb5c{background: #7DB5EC;}
+.c5a{color: #338AE1;} .c5b{color: #589FE7;} .c5c{color: #7DB5EC;}
+/* Azul Piscina */
+.cb6a{background: #21BFF3;} .cb6b{background: #49CBF5;} .cb6c{background: #72D7F8;}
+.c6a{color: #21BFF3;} .c6b{color: #49CBF5;} .c6c{color: #72D7F8;}
+/* Roxo Lavanda */
+.cb7a{background: #7C6DA7;} .cb7b{background: #9488B7;} .cb7c{background: #ACA3C7;}
+.c7a{color: #7C6DA7;} .c7b{color: #9488B7;} .c7c{color: #ACA3C7;}
+/* Roxo Lilás */
+.cb8a{background: #BB59BB;} .cb8b{background: #C877C8;} .cb8c{background: #D595D5;}
+.c8a{color: #BB59BB;} .c8b{color: #C877C8;} .c8c{color: #D595D5;}
+/* Roxo Vinho */
+.cb9a{background: #CC488A;} .cb9b{background: #D6699F;} .cb9c{background: #DF8AB5;}
+.c9a{color: #CC488A;} .c9b{color: #D6699F;} .c9c{color: #DF8AB5;}
+/* Rosa Pink */
+.cb10a{background: #EA2B69;} .cb10b{background: #EE5184;} .cb10c{background: #F1789F;}
+.c10a{color: #EA2B69;} .c10b{color: #EE5184;} .c10c{color: #F1789F;}
+/* Vermelho Telha */
+.cb11a{background: #CC4848;} .cb11b{background: #D66969;} .cb11c{background: #DF8A8A;}
+.c11a{color: #CC4848;} .c11b{color: #D66969;} .c11c{color: #DF8A8A;}
+/* Vermelho Vivo */
+.cb12a{background: #E44630;} .cb12b{background: #E96856;} .cb12c{background: #EE8A7B;}
+.c12a{color: #E44630;} .c12b{color: #E96856;} .c12c{color: #EE8A7B;}
+/* Laranja Marte */
+.cb13a{background: #FF952B;} .cb13b{background: #FFAA55;} .cb13c{background: #FFBF80;}
+.c13a{color: #FF952B;} .c13b{color: #FFAA55;} .c13c{color: #FFBF80;}
+/* Laranja Solar */
+.cb14a{background: #FFCC33;} .cb14b{background: #FFD555;} .cb14c{background: #FFDF80;}
+.c14a{color: #FFCC33;} .c14b{color: #FFD555;} .c14c{color: #FFDF80;}
+/* Amarelo Ouro */
+.cb15a{background: #FFE42B;} .cb15b{background: #FFEA55;} .cb15c{background: #FFEF80;}
+.c15a{color: #FFE42B;} .c15b{color: #FFEA55;} .c15c{color: #FFEF80;}
+ /* Cinza Azulado */
+.cb16a{background: #434852;} .cb16b{background: #565C69;} .cb16c{background: #697181;}
+.c16a{color: #434852;} .c16b{color: #565C69;} .c16c{color: #697181;}
+/* Cinza Esverdeado */
+.cb17a{background: #4B4F46;} .cb17b{background: #61655A;} .cb17c{background: #767B6F;}
+.c17a{color: #4B4F46;} .c17b{color: #61655A;} .c17c{color: #767B6F;}
+/* Cinza Concreto */
+.cb18a{background: #7A7A7A;} .cb18b{background: #8F8F8F;} .cb18c{background: #A4A4A4;}
+.c18a{color: #7A7A7A;} .c18b{color: #8F8F8F;} .c18c{color: #A4A4A4;}
+/* Cinza Fumaça */
+.c19a{color: #BFBFBF;} .c19b{color: #D4D4D4;} .c19c{color: #E9E9E9;}
+.cb19a{background: #BFBFBF;} .cb19b{background: #D4D4D4;} .cb19c{background: #E9E9E9;}
+/* Branco Perolado */
+.cb20a{background: #F2F3F7;} .cb20b{background: #F6F7FB;} .cb20c{background: #FFFFFF;}
+.c20a{color: #F2F3F7;} .c20b{color: #F6F7FB;} .c20c{color: #FFFFFF;}
+/* Marrom Café */
+.cb21a{background: #4A3836;} .cb21b{background: #604846;} .cb21c{background: #725452;}
+.c21a{color: #4A3836;} .c21b{color: #604846;} .c21c{color: #725452;}
+/* Marrom Chocolate */
+.cb22a{background: #6D473E;} .cb22b{background: #7C5247;} .cb22c{background: #8A5A4F;}
+.c22a{color: #6D473E;} .c22b{color: #7C5247;} .c22c{color: #8A5A4F;}
+/* Marrom Caramelo */
+.cb23a{background: #997C5E;} .cb23b{background: #A5886B;} .cb23c{background: #B0977D;}
+.c23a{color: #997C5E;} .c23b{color: #A5886B;} .c23c{color: #B0977D;}
+/* Marrom Creme */
+.cb24a{background: #E4DDD3;} .cb24b{background: #E9E3DC;} .cb24c{background: #F4F1EE;}
+.c24a{color: #E4DDD3;} .c24b{color: #E9E3DC;} .c24c{color: #F4F1EE;}
+
+
+/*=================================================================
+13. Elementos & Componentes | Elements & Components
+=================================================================*/
+
+kbd, mark, samp, code, var {
+    background-color: #F4F1EE;
+   border-radius: 0.1875em;
+   color: rgba(0, 0, 0, 0.9);
+   display: inline-block;
+   font-family: Consolas, "Courier New", monospace;
+   font-size: 0.875em;
+   line-height: 1;
+   padding: 0.1em 0.15em;
+}
+
+/*=================================================================
+14. Formatação responsiva
+=================================================================*/
+
+/* Phone 320px
+.................................................................*/
+@media screen and (max-width: 320px){
+  body{line-height: 1.25;}
+
+}
+
+/*Mobile 479px
+.................................................................*/
+@media screen and (max-width: 479px){
+  body{line-height: 1.25;}
+    h1{font-size: 2.625rem;letter-spacing: -.1rem;line-height: 2.815rem;}
+    h2{font-size: 2.125rem;letter-spacing: -.08rem;line-height: 2.255rem;}
+    h3{font-size: 1.625rem;letter-spacing: -.05rem;line-height: 1.815rem;}
+    h4{font-size: 1.313rem;letter-spacing: -.05rem;line-height: 1.5rem;}
+    h5,h6{font-size: 1.125rem;letter-spacing: -.05rem;line-height: 1.125rem;}
+
+}
+
+/*
+Tablet 480px a 767px
+.................................................................*/
+@media screen and ( min-width: 480px ) {
+  body{line-height: 1.25;}
+}
+
+/*
+Laptop 768px a 980px
+.................................................................*/
+
+@media screen and ( max-width: 768px ) {
+    h1{font-size: 3.438rem;letter-spacing: -.15rem;line-height: 3.555rem;}
+    h2{font-size: 2.625rem;letter-spacing: -.1rem;line-height: 2.815rem;}
+    h3{font-size: 2.125rem;letter-spacing: -.1rem;line-height: 2.255rem;}
+    h4{font-size: 1.625rem;letter-spacing: -.08rem;line-height: 1.815rem;}
+    h5{font-size: 1.313rem;letter-spacing: -.05rem;line-height: 1.5rem;}
+    h6{font-size: 1.125rem;letter-spacing: -.05rem;line-height: 1.125rem;}
+
+    .manchete { margin-bottom: 1.25em; font-size: 1.125rem; line-height: 1.25; }
+
+}
+
+/*
+Desktop 981px a 1100px
+.................................................................*/
+@media screen and ( min-width: 981px ) {
+
+}
+
+/*
+Desktop HD 1101px a 1300px
+.................................................................*/
+@media screen and ( min-width: 1101px )  {
+
+}
+
+/*
+Large Monitor 1301px
+.................................................................*/
+@media screen and ( min-width: 1301px ) {
+
+}
