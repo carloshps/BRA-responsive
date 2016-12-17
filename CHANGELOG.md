@@ -1,3 +1,9 @@
+17.dez.2016 - versão 0.5
+------------------------------
+- Criação da página de Botões do BRA responsive
+- Implementação do pcte de ícones com os botões
+- Reorganização da folha de estilos
+
 11.dez.2016 - versão 0.4.1
 ------------------------------
 - Implementação do pacote de ícones Fort Awesome 4.7.0
