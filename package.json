@@ -1,0 +1,34 @@
+{
+  "name": "bra-responsive",
+  "version": "0.5.0",
+  "description": "Framework front-end para criação de projetos web responsivos e mobile-first",
+  "scripts": {
+    "publicar": "./node_modules/.bin/np"
+  },
+  "files": [
+    "css",
+    "icons",
+    "img"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carloshps/BRA-responsive.git"
+  },
+  "keywords": [
+    "framework",
+    "css",
+    "responsive",
+    "web",
+    "front-end",
+    "mobile-first"
+  ],
+  "author": "Carlos Henrique (http://www.carloshps.com.br)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carloshps/BRA-responsive/issues"
+  },
+  "homepage": "http://www.braresponsive.com.br/",
+  "devDependencies": {
+    "np": "^2.11.0"
+  }
+}
