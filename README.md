@@ -1,4 +1,4 @@
-# BRA responsive BETA 0.4.1
+# BRA responsive BETA 0.5
 
 ![BRA responsive](https://github.com/carloshps/BRA-responsive/blob/master/img/bra-responsive-framework-carloshps-github.png)
 
@@ -50,7 +50,7 @@ Redimensione a janela do seu navegador e/ou visualize os demos abaixo em disposi
 - [x] Criação da página **Tipografia**
 - [ ] Criação da página **Elementos Inline**
 - [ ] Criação da página **Listas**
-- [ ] Criação da página **Botões**
+- [x] Criação da página **Botões**
 - [x] Criação da página **Cores**
 - [ ] Criação da página **Tabelas**
 - [ ] Criação da página **Formulário**
