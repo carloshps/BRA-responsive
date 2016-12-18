@@ -14,8 +14,8 @@ DADOS GERAIS / VERSÃO
 ===================================================================
 Projeto: BRA responsive | framework responsive css
 URI: http://www.braresponsive.com.br
-Versão BETA: 0.5
-Atualizado em: 17.12.2016
+Versão BETA: 0.6
+Atualizado em: 18.12.2016
 Autor: CarlosHPS Webdesigner
 Autor URI: http://www.carloshps.com.br
 Github: https://github.com/carloshps/BRA-responsive
@@ -42,6 +42,7 @@ INDEX / SUMÁRIO
     12.2. Cores
 13. Elementos & Componentes
 	13.1. Botões, Links & Inputs
+	13.2. Listas
 14. Formatação Responsiva
 
 =================================================================*/
@@ -586,6 +587,7 @@ input[type="submit"],input[type="button"],input[type="reset"]{
 
 /*botão com ícone*/
 .btn > i:before {margin-right: 0.625em;}
+.btn > i:before {font-weight: normal; font-style: normal;margin-right: 0.625em;vertical-align: baseline;}
 
 /* Tamanho dos Botões / buttons size */
 .btn-small { font-size: 0.75rem; line-height: 0.875rem; padding: 0.4em 0.6em;}
@@ -1065,6 +1067,41 @@ input[type="submit"],input[type="button"],input[type="reset"]{
 
 /* Botão perigo Outline */
 .btn-danger-outline{ border: 1px solid #EE8A7B; color: #EE8A7B;}
+
+/* 13.2 - Listas | lists
+   ------------------------------------------------------------- */
+
+/* sem estilo */
+.list-nostyle {list-style: none;padding-left: 0}
+.list-nostyle li {padding-left: 0;}
+
+/* lista horizontal */
+.list-h li{display: inline; padding-left: 0}
+.list-h li a{padding-left: 0.825rem;}
+.list-h li:first-child a{padding-left: 0;}
+
+/* de definição */
+dl {margin: 0 0 1.875em 0.625em;}
+dt {font-weight: bold; margin-bottom: 0.25rem;}
+dd {margin: 0 0 1rem 1rem;}
+
+/* de definição inline */
+   .dl-inline dt {
+      clear: left;
+      float: left;
+      overflow: hidden;
+      text-align: right;
+      white-space: nowrap;
+   }
+   .dl-inline dd {margin-left: 5rem;}
+   .dl-inline dd:before,
+   .dl-inline dd:after {
+      content: "";
+      display: table;
+   }
+   .dl-inline dd:after {
+      clear: both;
+   }
 
 kbd, mark, samp, code, var {
     background-color: #F4F1EE;

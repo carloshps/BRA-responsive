@@ -15,10 +15,13 @@
     "url": "git+https://github.com/carloshps/BRA-responsive.git"
   },
   "keywords": [
+    "bra-responsive",
     "framework",
     "css",
+    "grid",
     "responsive",
     "web",
+    "carloshps",
     "front-end",
     "webdesign",
     "mobile-first"

@@ -1,3 +1,13 @@
+18.dez.2016 - versão 0.6
+------------------------------
+- Criação da página de Listas do BRA responsive
+- Implementação de controle de versões via npm
+- Implementação de instalação via npm
+- Criação do package.json para publicação no npm
+- Implementação do pcte de ícones com às listas
+- Implementação da paleta de cores às listas
+- Reorganização da folha de estilos
+
 17.dez.2016 - versão 0.5
 ------------------------------
 - Criação da página de Botões do BRA responsive
@@ -11,12 +21,14 @@
 - Atualização da página Como Usar o BRA responsive
 - Otimização do Google Fonts
 - Correção de erros semânticos e ortográficos
+
 23.nov.2016 - versão 0.3.1
 ------------------------------
 - Criação da página de cores do BRA responsive
 - Implementação da paleta de cores com 72 variações
 - Correção de bugs da tipografia do tamanho dos textos
 - Correção de bugs no css referentes ao line-height
+
 19.nov.2016 - versão 0.2.1
 ------------------------------
 - Implantação da seção 'formatação responsiva' ao bra.css
