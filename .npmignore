@@ -1,0 +1,19 @@
+# Ignorando todos os arquivos
+*
+
+# Permitindo somente os arquivos necessários
+!package.json
+!README.md
+!CHANGELOG.md
+!css/
+!icons/
+!img/
+!botoes.html
+!cores.html
+!demo-01.html
+!demo-02.html
+!demo-03.html
+!icones.html
+!modelo-mackup-html5.html
+!tipografia.html
+!listas.html
