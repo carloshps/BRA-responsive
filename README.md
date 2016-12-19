@@ -6,7 +6,8 @@
 
 ## Instalação
 
-`npm install --save bra-responsive`
+- via npm: `npm install --save bra-responsive`
+- via bower: `bower install --save bra-responsive`
 
 ## Sobre o BRA responsive
 
