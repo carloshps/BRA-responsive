@@ -1,4 +1,4 @@
-# BRA responsive BETA 0.7
+# BRA responsive BETA 0.7.0
 
 ![BRA responsive](https://github.com/carloshps/BRA-responsive/blob/master/img/bra-responsive-framework-carloshps-github.png)
 
