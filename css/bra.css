@@ -14,8 +14,8 @@ DADOS GERAIS / VERSÃO
 ===================================================================
 Projeto: BRA responsive | framework responsive css
 URI: http://www.braresponsive.com.br
-Versão BETA: 0.6
-Atualizado em: 18.12.2016
+Versão BETA: 0.7
+Atualizado em: 22.12.2016
 Autor: CarlosHPS Webdesigner
 Autor URI: http://www.carloshps.com.br
 Github: https://github.com/carloshps/BRA-responsive
@@ -43,6 +43,7 @@ INDEX / SUMÁRIO
 13. Elementos & Componentes
 	13.1. Botões, Links & Inputs
 	13.2. Listas
+    13.3. Elementos Inline
 14. Formatação Responsiva
 
 =================================================================*/
@@ -1103,6 +1104,14 @@ dd {margin: 0 0 1rem 1rem;}
       clear: both;
    }
 
+/* 13.3 - Elementos Inline | inline elements
+   ------------------------------------------------------------- */
+
+/* Ênfase */
+.normal{font-size: 100%;}
+strong, .strong{font-weight:700;}
+em, .em{font-style: italic;}
+
 kbd, mark, samp, code, var {
     background-color: #F4F1EE;
    border-radius: 0.1875em;
@@ -1113,6 +1122,65 @@ kbd, mark, samp, code, var {
    line-height: 1;
    padding: 0.1em 0.15em;
 }
+/* hr - barra horizontal
+   ------------------------------------------------------------- */
+hr { border-top: .1rem solid #BFBFBF; }
+
+/* abbr & acronym
+   ------------------------------------------------------------- */
+abbr, acronym{ border-bottom: 5px dotted #000; cursor: help;}
+
+/* bold - negrito
+   ------------------------------------------------------------- */
+b{font-weight: bold;}
+
+/* cite - citação
+   ------------------------------------------------------------- */
+cite {
+   color: rgba(0, 0, 0, 0.5);
+   font-size: 0.750em;
+   line-height: 1em;
+}
+
+/* pre & code
+   ------------------------------------------------------------- */
+code {
+   color: #fff;
+   margin: 0;
+   font-size: 0.875rem;
+   white-space: nowrap;
+   background: #ACA3C7;
+   border: 1px solid #9488B7;
+}
+code:hover {
+   background-color: #9488B7;
+}
+pre>code {
+   display: block;
+   line-height: 1.250em;
+   padding: 0 2.5rem;
+   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+   white-space: pre-wrap;
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;
+   white-space: -o-pre-wrap;
+   word-wrap: break-word;
+}
+p > code{ margin: 0;}
+
+/* kbd - keyboard input
+   ------------------------------------------------------------- */
+kbd{border: 1px solid #E9E9E9;
+   color: #7A7A7A;
+   padding-left: 0.35em;
+   padding-right: 0.35em;
+}
+
+/* mark - marcação
+   ------------------------------------------------------------- */
+mark{ background: #DDEA80;}
+
+
 
 /*=================================================================
 14. Formatação responsiva

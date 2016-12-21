@@ -1,3 +1,9 @@
+22.dez.2016 - versão 0.7
+------------------------------
+- Criação da página Elementos Inline do BRA responsive
+- Reorganização da folha de estilos
+- Correção de bugs de formatação
+
 18.dez.2016 - versão 0.6
 ------------------------------
 - Criação da página de Listas do BRA responsive
