@@ -1,0 +1,30 @@
+{
+  "name": "bra-responsive",
+  "version": "0.5.1",
+  "description": "Framework front-end para criação de projetos web responsivos e mobile-first",
+  "main": "css/bra.css",
+  "authors": [
+    "CarlosHPS (http://www.carloshps.com.br)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bra-responsive",
+    "framework",
+    "css",
+    "grid",
+    "responsive",
+    "web",
+    "carloshps",
+    "front-end",
+    "webdesign",
+    "mobile-first"
+  ],
+  "homepage": "http://www.braresponsive.com.br",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests  "
+  ]
+}
