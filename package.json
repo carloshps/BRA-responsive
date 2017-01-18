@@ -1,6 +1,6 @@
 {
   "name": "bra-responsive",
-  "version": "0.7.0",
+  "version": "0.8.1",
   "description": "Framework front-end para criação de projetos web responsivos e mobile-first",
   "scripts": {
     "publicar": "./node_modules/.bin/np"
