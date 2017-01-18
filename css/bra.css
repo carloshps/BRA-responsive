@@ -1186,9 +1186,6 @@ mark{ background: #DDEA80;}
 
 /* Tabela Padrão | default table */
 table{ border-collapse: collapse; display: table; width: 100%;}
-thead,
-.borderh tr /* Tabela com bordas horizontais */
-{border-bottom: 0.01rem solid #E9E9E9;}
 
 tfoot {border-top: 0.01rem solid #E9E9E9; font-weight: 700; }
 tfoot td, tfoot th { color: rgba(0, 0, 0, 0.35); }
@@ -1202,6 +1199,11 @@ th:last-child,
 td:last-child {
   border-right-width: 0;
 }
+
+/* Tabela com bordas horizontais */
+thead,
+.borderh tbody tr
+{border-bottom: 0.01rem solid #E9E9E9;}
 
 /* Tabela com todas as bordas */
 .border-full tr,
