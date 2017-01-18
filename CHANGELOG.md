@@ -1,3 +1,10 @@
+18.jan.2017 - versão 0.8.1
+------------------------------
+- Criação da página Tabelas do BRA responsive
+- Criação de folhas de estilos para cada funcionalidade do BRA responsive
+- Reorganização da folha de estilos
+- Correção de bugs de formatação
+
 22.dez.2016 - versão 0.7
 ------------------------------
 - Criação da página Elementos Inline do BRA responsive
