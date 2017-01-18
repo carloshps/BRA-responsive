@@ -1,0 +1,451 @@
+/*
+ *      ____  _____
+ *     |  _ \|  __ \     /\                                                _
+ *     | |_) | |__) |   /  \        ________  _________  ____  ____  _____(_)   _____
+ *     |  _ <|  _  /   / /\ \      / ___/ _ \/ ___/ __ \/ __ \/ __ \/ ___/ / | / / _ \
+ *     | |_) | | \ \  / ____ \    / /  /  __(__  ) /_/ / /_/ / / / (__  ) /| |/ /  __/
+ *     |____/|_|  \_\/_/    \_\  /_/   \___/____/ .___/\____/_/ /_/____/_/ |___/\___/
+ *                                             /_/
+ *
+*/
+
+
+/*=================================================================
+DADOS GERAIS / VERSÃO
+===================================================================
+Projeto: BRA responsive | framework responsive css
+URI: http://www.braresponsive.com.br
+Versão BETA: 0.8.2
+Atualizado em: 18.01.2017
+Autor: CarlosHPS Webdesigner
+Autor URI: http://www.carloshps.com.br
+Github: https://github.com/carloshps/BRA-responsive
+=================================================================*/
+
+
+/*=================================================================
+INDEX / SUMÁRIO
+===================================================================
+
+0. Reset Normalize.css (minify)
+1. Configuração Geral
+2. Preparação para o grid
+3. Coluna Padrão - Grid Flexível
+4. Grid Responsivo Phone 320px
+5. Grid Responsivo Smartphone 479px
+6. Grid Responsivo Tablet 480px a 767px
+7. Grid Responsivo Laptop 768px a 980px
+8. Grid Responsivo Desktop 981px a 1100px
+9. Grid Responsivo Desktop HD 1101px a 1300px
+10. Grid Responsivo Large Monitor 1301px
+11. Imagem e media responsive
+12. UI Kit Básico
+    12.1. Tipografia
+    12.2. Cores
+13. Elementos & Componentes
+	13.1. Botões, Links & Inputs
+	13.2. Listas
+    13.3. Elementos Inline
+    13.4. Tabelas
+14. Formatação Responsiva
+
+=================================================================*/
+
+/*=================================================================
+1. Configuração Geral
+=================================================================*/
+
+html {
+    box-sizing: border-box;
+    font-size: 1rem;  /* 1rem = 16px forma de deixar a tipografia responsiva */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Estilos gerais da página */
+
+body {
+    background: #F6F7FB;
+    color: #999;
+    font-family: "Libre Franklin", Helvetica, sans-serif;
+    font-weight: 300;
+    line-height: 1.375;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+/* Formatação elementos gerais do layout */
+
+header,
+footer,
+section,
+article,
+aside {
+    padding: 0.625em 0.938em;
+}
+
+/* Formatação do container, classe que conterá as linhas, colunas e conteúdo */
+
+.container {
+    display: block;
+    height: auto;
+    margin: 0 auto;  /* centralizando o conteúdo */
+    max-width: 81.250em;  /* 1320px largura máxima que comporá a grid */
+    max-width: 100%;  !important/* largura full */
+    padding: 0;
+    position: relative;
+    *zoom: 1;  /* iniciando o zoom com o padrão de 100% */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Clearing */
+
+.row:before,
+.row:after,
+.container:before,
+.container:after {
+    content: "";
+    display: table;
+}
+
+.row:after,
+.container:after {
+    clear: both;
+}
+
+/*=================================================================
+2. Preparação para o grid
+=================================================================*/
+
+/* Prefixo para o grid */
+
+[class*='bra-'] {
+    float: left;
+    width: 100%;
+}
+
+/* Conteúdo COM espaçamento entre as colunas - gutters */
+
+.cont {
+    margin: 10px;
+}
+
+/* Conteúdo SEM espaçamento entre as colunas - no gutters */
+
+.cont-nogutter {
+    margin: 0px;
+}
+
+/* Formatação dos blocos de conteúdo */
+
+.cont,
+.cont-nogutter {
+    background: #fff;
+    /* retire e/ou edite */
+    border-radius: 2px;
+    /* retire e/ou edite */
+    box-shadow: 0 2px 1px rgba(0, 0, 0, .2);
+    /* retire e/ou edite */
+    padding: .5em;
+}
+
+/*=================================================================
+3. Coluna Padrão - Grid Flexível (prefixo: .bra-)
+=================================================================*/
+.bra-1{width: 8.33333%;}
+.bra-2{width: 16.66667%;}
+.bra-3{width: 25%;}
+.bra-4{width: 33.33332%;}
+.bra-5{width: 41.66665%;}
+.bra-6{width: 49.99998%;}
+.bra-7{width: 58.33331%;}
+.bra-8{width: 66.66664%;}
+.bra-9{width: 74.99997%;}
+.bra-10{width: 83.33333%;}
+.bra-11{width: 91.66663%;}
+.bra-12{width: 100%;}
+
+/*=================================================================
+4. Grid Responsivo Phone 320px (prefixo: .bra-phone-)
+=================================================================*/
+@media screen and (max-width: 320px){
+
+.bra-phone-1{width: 8.33333%;}
+.bra-phone-2{width: 16.66667%;}
+.bra-phone-3{width: 25%;}
+.bra-phone-4{width: 33.33332%;}
+.bra-phone-5{width: 41.66665%;}
+.bra-phone-6{width: 49.99998%;}
+.bra-phone-7{width: 58.33331%;}
+.bra-phone-8{width: 66.66664%;}
+.bra-phone-9{width: 74.99997%;}
+.bra-phone-10{width: 83.33333%;}
+.bra-phone-11{width: 91.66663%;}
+.bra-phone-12{width: 100%;}
+
+}
+
+/*=================================================================
+5. Grid Responsivo Mobile 479px (prefixo: .bra-smart-)
+=================================================================*/
+@media screen and (max-width: 479px){
+
+.bra-smart-1{ width: 8.33333%;}
+.bra-smart-2{ width: 16.66667%;}
+.bra-smart-3{ width: 25%;}
+.bra-smart-4{ width: 33.33332%;}
+.bra-smart-5{ width: 41.66665%;}
+.bra-smart-6{ width: 49.99998%;}
+.bra-smart-7{ width: 58.33331%;}
+.bra-smart-8{ width: 66.66664%;}
+.bra-smart-9{ width: 74.99997%;}
+.bra-smart-10{ width: 83.33333%;}
+.bra-smart-11{ width: 91.66663%;}
+.bra-smart-12{ width: 100%;}
+
+}
+
+/*=================================================================
+6. Grid Responsivo Tablet 480px a 767px (prefixo: .bra-tablet-)
+=================================================================*/
+@media screen and ( min-width: 480px ) {
+
+.bra-tablet-1{ width: 8.33333%;}
+.bra-tablet-2{ width: 16.66667%;}
+.bra-tablet-3{ width: 25%;}
+.bra-tablet-4{ width: 33.33332%;}
+.bra-tablet-5{ width: 41.66665%;}
+.bra-tablet-6{ width: 49.99998%;}
+.bra-tablet-7{ width: 58.33331%;}
+.bra-tablet-8{ width: 66.66664%;}
+.bra-tablet-9{ width: 74.99997%;}
+.bra-tablet-10{ width: 83.33333%;}
+.bra-tablet-11{ width: 91.66663%;}
+.bra-tablet-12{ width: 100%;}
+
+}
+
+/*=================================================================
+7. Grid Responsivo Laptop 768px a 980px (prefixo: .bra-laptop-)
+=================================================================*/
+
+@media screen and ( min-width: 768px ) {
+
+.bra-laptop-1{ width: 8.33333%;}
+.bra-laptop-2{ width: 16.66667%;}
+.bra-laptop-3{ width: 25%;}
+.bra-laptop-4{ width: 33.33332%;}
+.bra-laptop-5{ width: 41.66665%;}
+.bra-laptop-6{ width: 49.99998%;}
+.bra-laptop-7{ width: 58.33331%;}
+.bra-laptop-8{ width: 66.66664%;}
+.bra-laptop-9{ width: 74.99997%;}
+.bra-laptop-10{ width: 83.33333%;}
+.bra-laptop-11{ width: 91.66663%;}
+.bra-laptop-12{ width: 100%;}
+
+}
+
+/*==============================================================================
+8. Grid Responsivo Desktop 981px a 1100px (prefixo: .bra-desktop-)
+==============================================================================*/
+@media screen and ( min-width: 981px ) {
+
+.bra-desktop-1{ width: 8.33333%;}
+.bra-desktop-2{ width: 16.66667%;}
+.bra-desktop-3{ width: 25%;}
+.bra-desktop-4{ width: 33.33332%;}
+.bra-desktop-5{ width: 41.66665%;}
+.bra-desktop-6{ width: 49.99998%;}
+.bra-desktop-7{ width: 58.33331%;}
+.bra-desktop-8{ width: 66.66664%;}
+.bra-desktop-9{ width: 74.99997%;}
+.bra-desktop-10{ width: 83.33333%;}
+.bra-desktop-11{ width: 91.66663%;}
+.bra-desktop-12{ width: 100%;}
+
+}
+
+/*=============================================================================
+9. Grid Responsivo Desktop HD 1101px a 1300px (prefixo: .bra-hd-)
+=============================================================================*/
+@media screen and ( min-width: 1101px )  {
+
+.bra-hd-1{ width: 8.33333%;}
+.bra-hd-2{ width: 16.66667%;}
+.bra-hd-3{ width: 25%;}
+.bra-hd-4{ width: 33.33332%;}
+.bra-hd-5{ width: 41.66665%;}
+.bra-hd-6{ width: 49.99998%;}
+.bra-hd-7{ width: 58.33331%;}
+.bra-hd-8{ width: 66.66664%;}
+.bra-hd-9{ width: 74.99997%;}
+.bra-hd-10{ width: 83.33333%;}
+.bra-hd-11{ width: 91.66663%;}
+.bra-hd-12{ width: 100%;}
+
+}
+
+/*=================================================================
+10. Grid Responsivo Large Monitor 1301px (prefixo: .bra-monitor-)
+=================================================================*/
+@media screen and ( min-width: 1301px ) {
+
+.bra-monitor-1{ width: 8.33333%;}
+.bra-monitor-2{ width: 16.66667%;}
+.bra-monitor-3{ width: 25%;}
+.bra-monitor-4{ width: 33.33332%;}
+.bra-monitor-5{ width: 41.66665%;}
+.bra-monitor-6{ width: 49.99998%;}
+.bra-monitor-7{ width: 58.33331%;}
+.bra-monitor-8{ width: 66.66664%;}
+.bra-monitor-9{ width: 74.99997%;}
+.bra-monitor-10{ width: 83.33333%;}
+.bra-monitor-11{ width: 91.66663%;}
+.bra-monitor-12{ width: 100%;}
+
+}
+
+/*=================================================================
+11. Imagem e media responsive
+=================================================================*/
+
+img.responsive-img,
+video.responsive-video {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Formatação de legenda para imagem a ser criado após a inserção do img */
+
+img + p {
+    font-size: 0.8rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/*=================================================================
+14. Formatação responsiva
+=================================================================*/
+
+/* Phone 320px
+.................................................................*/
+
+@media screen and (max-width: 320px) {
+    body {
+        line-height: 1.25;
+    }
+}
+
+/*Mobile 479px
+.................................................................*/
+
+@media screen and (max-width: 479px) {
+    body {
+        line-height: 1.25;
+    }
+    h1 {
+        font-size: 2.625rem;
+        letter-spacing: -.1rem;
+        line-height: 2.815rem;
+    }
+    h2 {
+        font-size: 2.125rem;
+        letter-spacing: -.08rem;
+        line-height: 2.255rem;
+    }
+    h3 {
+        font-size: 1.625rem;
+        letter-spacing: -.05rem;
+        line-height: 1.815rem;
+    }
+    h4 {
+        font-size: 1.313rem;
+        letter-spacing: -.05rem;
+        line-height: 1.5rem;
+    }
+    h5,
+    h6 {
+        font-size: 1.125rem;
+        letter-spacing: -.05rem;
+        line-height: 1.125rem;
+    }
+}
+
+
+/*
+Tablet 480px a 767px
+.................................................................*/
+
+@media screen and ( min-width: 480px) {
+    body {
+        line-height: 1.25;
+    }
+}
+
+/*
+Laptop 768px a 980px
+.................................................................*/
+
+@media screen and ( max-width: 768px) {
+    h1 {
+        font-size: 3.438rem;
+        letter-spacing: -.15rem;
+        line-height: 3.555rem;
+    }
+    h2 {
+        font-size: 2.625rem;
+        letter-spacing: -.1rem;
+        line-height: 2.815rem;
+    }
+    h3 {
+        font-size: 2.125rem;
+        letter-spacing: -.1rem;
+        line-height: 2.255rem;
+    }
+    h4 {
+        font-size: 1.625rem;
+        letter-spacing: -.08rem;
+        line-height: 1.815rem;
+    }
+    h5 {
+        font-size: 1.313rem;
+        letter-spacing: -.05rem;
+        line-height: 1.5rem;
+    }
+    h6 {
+        font-size: 1.125rem;
+        letter-spacing: -.05rem;
+        line-height: 1.125rem;
+    }
+    .manchete {
+        margin-bottom: 1.25em;
+        font-size: 1.125rem;
+        line-height: 1.25;
+    }
+}
+
+/*
+Desktop 981px a 1100px
+.................................................................*/
+
+@media screen and ( min-width: 981px) {}
+
+/*
+Desktop HD 1101px a 1300px
+.................................................................*/
+
+@media screen and ( min-width: 1101px) {}
+
+/*
+Large Monitor 1301px
+.................................................................*/
+
+@media screen and ( min-width: 1301px) {}
