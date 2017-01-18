@@ -1,0 +1,158 @@
+/*
+ *      ____  _____
+ *     |  _ \|  __ \     /\                                                _
+ *     | |_) | |__) |   /  \        ________  _________  ____  ____  _____(_)   _____
+ *     |  _ <|  _  /   / /\ \      / ___/ _ \/ ___/ __ \/ __ \/ __ \/ ___/ / | / / _ \
+ *     | |_) | | \ \  / ____ \    / /  /  __(__  ) /_/ / /_/ / / / (__  ) /| |/ /  __/
+ *     |____/|_|  \_\/_/    \_\  /_/   \___/____/ .___/\____/_/ /_/____/_/ |___/\___/
+ *                                             /_/
+ *
+*/
+
+/*=================================================================
+DADOS GERAIS / VERSÃO
+===================================================================
+Projeto: BRA responsive | framework responsive css
+URI: http://www.braresponsive.com.br
+Versão BETA: 0.8.2
+Atualizado em: 18.01.2017
+Autor: CarlosHPS Webdesigner
+Autor URI: http://www.carloshps.com.br
+Github: https://github.com/carloshps/BRA-responsive
+=================================================================*/
+
+/*=================================================================
+INDEX / SUMÁRIO
+===================================================================
+
+0. Reset Normalize.css (minify)
+1. Configuração Geral
+2. Preparação para o grid
+3. Coluna Padrão - Grid Flexível
+4. Grid Responsivo Phone 320px
+5. Grid Responsivo Smartphone 479px
+6. Grid Responsivo Tablet 480px a 767px
+7. Grid Responsivo Laptop 768px a 980px
+8. Grid Responsivo Desktop 981px a 1100px
+9. Grid Responsivo Desktop HD 1101px a 1300px
+10. Grid Responsivo Large Monitor 1301px
+11. Imagem e media responsive
+12. UI Kit Básico
+    12.1. Tipografia
+    12.2. Cores
+13. Elementos & Componentes
+	13.1. Botões, Links & Inputs
+	13.2. Listas
+    13.3. Elementos Inline
+    13.4. Tabelas
+14. Formatação Responsiva
+
+=================================================================*/
+
+/*=================================================================
+13. Elementos & Componentes | Elements & Components
+=================================================================*/
+
+/* 13.4 - Tabelas | tables
+   ------------------------------------------------------------- */
+
+/* Tabela Padrão | default table */
+table{ border-collapse: collapse; display: table; width: 100%;}
+thead,
+.borderh tr /* Tabela com bordas horizontais */
+{border-bottom: 0.01rem solid #E9E9E9;}
+
+tfoot {border-top: 0.01rem solid #E9E9E9; font-weight: 700; }
+tfoot td, tfoot th { color: rgba(0, 0, 0, 0.35); }
+th,td { padding: 1rem 1.15rem; text-align: left;}
+
+th:first-child,
+td:first-child {
+  border-left-width: 0;
+}
+th:last-child,
+td:last-child {
+  border-right-width: 0;
+}
+
+/* Tabela com todas as bordas */
+.border-full tr,
+.border-full td,
+.border-full th{border: 0.01rem solid #E9E9E9;}
+
+/* Tabela Hover */
+table.hover > tbody > tr {
+  transition: background-color .35s ease;
+  -webkit-transition: background-color 0.35s ease;
+  -moz-transition: background-color 0.35s ease;
+}
+
+table.hover > tbody > tr:hover {
+  background-color: #f4f4f4;
+}
+
+/* Tabela Zebrada */
+table.striped > tbody > tr:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+/* Tabela Responsiva */
+@media only screen and (max-width: 992px){
+.responsive-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  .responsive-table td:empty:before {
+    content: '\00a0'; /* espaço */
+  }
+  .responsive-table th,
+  .responsive-table td {
+    margin: 0;
+    vertical-align: top;
+  }
+  .responsive-table th {
+    text-align: left;
+  }
+  .responsive-table thead {
+    background-color: #f9f9f9;
+    display: block;
+    float: left;
+  }
+  .responsive-table thead tr {
+    display: block;
+    padding: 0 0.625rem 0 0;
+  }
+  .responsive-table thead tr th::before {
+    content: "\00a0";
+  }
+  .responsive-table tbody {
+    display: block;
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: auto;
+  }
+  .responsive-table tbody tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .responsive-table th {
+    display: block;
+    text-align: right;
+  }
+  .responsive-table td {
+    display: block;
+    min-height: 1.125em;
+    text-align: left;
+  }
+  .responsive-table tr {
+    padding: 0 0.625em;
+  }
+  .responsive-table thead {
+    border: 0;
+    border-right: 0.0625em solid #d4d4d4;
+  }
+}
