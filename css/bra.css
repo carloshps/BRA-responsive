@@ -14,8 +14,8 @@ DADOS GERAIS / VERSÃO
 ===================================================================
 Projeto: BRA responsive | framework responsive css
 URI: http://www.braresponsive.com.br
-Versão BETA: 0.7.0
-Atualizado em: 22.12.2016
+Versão BETA: 0.8.2
+Atualizado em: 18.01.2017
 Autor: CarlosHPS Webdesigner
 Autor URI: http://www.carloshps.com.br
 Github: https://github.com/carloshps/BRA-responsive
@@ -44,6 +44,7 @@ INDEX / SUMÁRIO
 	13.1. Botões, Links & Inputs
 	13.2. Listas
     13.3. Elementos Inline
+    13.4. Tabelas
 14. Formatação Responsiva
 
 =================================================================*/
@@ -1180,6 +1181,109 @@ kbd{border: 1px solid #E9E9E9;
    ------------------------------------------------------------- */
 mark{ background: #DDEA80;}
 
+/* 13.4 - Tabelas | tables
+   ------------------------------------------------------------- */
+
+/* Tabela Padrão | default table */
+table{ border-collapse: collapse; display: table; width: 100%;}
+thead,
+.borderh tr /* Tabela com bordas horizontais */
+{border-bottom: 0.01rem solid #E9E9E9;}
+
+tfoot {border-top: 0.01rem solid #E9E9E9; font-weight: 700; }
+tfoot td, tfoot th { color: rgba(0, 0, 0, 0.35); }
+th,td { padding: 1rem 1.15rem; text-align: left;}
+
+th:first-child,
+td:first-child {
+  border-left-width: 0;
+}
+th:last-child,
+td:last-child {
+  border-right-width: 0;
+}
+
+/* Tabela com todas as bordas */
+.border-full tr,
+.border-full td,
+.border-full th{border: 0.01rem solid #E9E9E9;}
+
+/* Tabela Hover */
+table.hover > tbody > tr {
+  transition: background-color .35s ease;
+  -webkit-transition: background-color 0.35s ease;
+  -moz-transition: background-color 0.35s ease;
+}
+
+table.hover > tbody > tr:hover {
+  background-color: #f4f4f4;
+}
+
+/* Tabela Zebrada */
+table.striped > tbody > tr:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+/* Tabela Responsiva */
+@media only screen and (max-width: 992px){
+.responsive-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  .responsive-table td:empty:before {
+    content: '\00a0'; /* espaço */
+  }
+  .responsive-table th,
+  .responsive-table td {
+    margin: 0;
+    vertical-align: top;
+  }
+  .responsive-table th {
+    text-align: left;
+  }
+  .responsive-table thead {
+    background-color: #f9f9f9;
+    display: block;
+    float: left;
+  }
+  .responsive-table thead tr {
+    display: block;
+    padding: 0 0.625rem 0 0;
+  }
+  .responsive-table thead tr th::before {
+    content: "\00a0";
+  }
+  .responsive-table tbody {
+    display: block;
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: auto;
+  }
+  .responsive-table tbody tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .responsive-table th {
+    display: block;
+    text-align: right;
+  }
+  .responsive-table td {
+    display: block;
+    min-height: 1.125em;
+    text-align: left;
+  }
+  .responsive-table tr {
+    padding: 0 0.625em;
+  }
+  .responsive-table thead {
+    border: 0;
+    border-right: 0.0625em solid #d4d4d4;
+  }
+}
 
 
 /*=================================================================
