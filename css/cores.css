@@ -1,0 +1,153 @@
+/*
+ *      ____  _____
+ *     |  _ \|  __ \     /\                                                _
+ *     | |_) | |__) |   /  \        ________  _________  ____  ____  _____(_)   _____
+ *     |  _ <|  _  /   / /\ \      / ___/ _ \/ ___/ __ \/ __ \/ __ \/ ___/ / | / / _ \
+ *     | |_) | | \ \  / ____ \    / /  /  __(__  ) /_/ / /_/ / / / (__  ) /| |/ /  __/
+ *     |____/|_|  \_\/_/    \_\  /_/   \___/____/ .___/\____/_/ /_/____/_/ |___/\___/
+ *                                             /_/
+ *
+*/
+
+/*=================================================================
+DADOS GERAIS / VERSÃO
+===================================================================
+Projeto: BRA responsive | framework responsive css
+URI: http://www.braresponsive.com.br
+Versão BETA: 0.8.2
+Atualizado em: 18.01.2017
+Autor: CarlosHPS Webdesigner
+Autor URI: http://www.carloshps.com.br
+Github: https://github.com/carloshps/BRA-responsive
+=================================================================*/
+
+/*=================================================================
+INDEX / SUMÁRIO
+===================================================================
+
+0. Reset Normalize.css (minify)
+1. Configuração Geral
+2. Preparação para o grid
+3. Coluna Padrão - Grid Flexível
+4. Grid Responsivo Phone 320px
+5. Grid Responsivo Smartphone 479px
+6. Grid Responsivo Tablet 480px a 767px
+7. Grid Responsivo Laptop 768px a 980px
+8. Grid Responsivo Desktop 981px a 1100px
+9. Grid Responsivo Desktop HD 1101px a 1300px
+10. Grid Responsivo Large Monitor 1301px
+11. Imagem e media responsive
+12. UI Kit Básico
+    12.1. Tipografia
+    12.2. Cores
+13. Elementos & Componentes
+	13.1. Botões, Links & Inputs
+	13.2. Listas
+    13.3. Elementos Inline
+    13.4. Tabelas
+14. Formatação Responsiva
+
+=================================================================*/
+
+/*=================================================================
+12. UI Kit Básico
+=================================================================*/
+
+/* 12.2 - Cores
+.................................................................*/
+
+/* Verde Limão */
+.cb1a{background: #C9DD37;} .cb1b{background: #D2E35B;} .cb1c{background: #DDEA80;}
+.c1a{color: #C9DD37;} .c1b{color: #D2E35B;} .c1c{color: #DDEA80;}
+
+/* Verde Amazônia */
+.cb2a{background: #98B75E;} .cb2b{background: #AAC47B;} .cb2c{background: #BDD198;}
+.c2a{color: #98B75E;} .c2b{color: #AAC47B;} .c2c{color: #BDD198;}
+
+/* Verde Esmeralda */
+.cb3a{background: #48CCBC;} .cb3b{background: #69D6C8;} .cb3c{background: #8ADFD5;}
+.c3a{color: #48CCBC;} .c3b{color: #69D6C8;} .c3c{color: #8ADFD5;}
+
+/* Azul Jeans */
+.cb4a{background: #4268A8;} .cb4b{background: #577DBD;} .cb4c{background: #7695C9}
+.c4a{color: #4268A8;} .c4b{color: #577DBD;} .c4c{color: #7695C9;}
+
+/* Azul Oceano */
+.cb5a{background: #338AE1;} .cb5b{background: #589FE7;} .cb5c{background: #7DB5EC;}
+.c5a{color: #338AE1;} .c5b{color: #589FE7;} .c5c{color: #7DB5EC;}
+
+/* Azul Piscina */
+.cb6a{background: #21BFF3;} .cb6b{background: #49CBF5;} .cb6c{background: #72D7F8;}
+.c6a{color: #21BFF3;} .c6b{color: #49CBF5;} .c6c{color: #72D7F8;}
+
+/* Roxo Lavanda */
+.cb7a{background: #7C6DA7;} .cb7b{background: #9488B7;} .cb7c{background: #ACA3C7;}
+.c7a{color: #7C6DA7;} .c7b{color: #9488B7;} .c7c{color: #ACA3C7;}
+
+/* Roxo Lilás */
+.cb8a{background: #BB59BB;} .cb8b{background: #C877C8;} .cb8c{background: #D595D5;}
+.c8a{color: #BB59BB;} .c8b{color: #C877C8;} .c8c{color: #D595D5;}
+
+/* Roxo Vinho */
+.cb9a{background: #CC488A;} .cb9b{background: #D6699F;} .cb9c{background: #DF8AB5;}
+.c9a{color: #CC488A;} .c9b{color: #D6699F;} .c9c{color: #DF8AB5;}
+
+/* Rosa Pink */
+.cb10a{background: #EA2B69;} .cb10b{background: #EE5184;} .cb10c{background: #F1789F;}
+.c10a{color: #EA2B69;} .c10b{color: #EE5184;} .c10c{color: #F1789F;}
+
+/* Vermelho Telha */
+.cb11a{background: #CC4848;} .cb11b{background: #D66969;} .cb11c{background: #DF8A8A;}
+.c11a{color: #CC4848;} .c11b{color: #D66969;} .c11c{color: #DF8A8A;}
+
+/* Vermelho Vivo */
+.cb12a{background: #E44630;} .cb12b{background: #E96856;} .cb12c{background: #EE8A7B;}
+.c12a{color: #E44630;} .c12b{color: #E96856;} .c12c{color: #EE8A7B;}
+
+/* Laranja Marte */
+.cb13a{background: #FF952B;} .cb13b{background: #FFAA55;} .cb13c{background: #FFBF80;}
+.c13a{color: #FF952B;} .c13b{color: #FFAA55;} .c13c{color: #FFBF80;}
+
+/* Laranja Solar */
+.cb14a{background: #FFCC33;} .cb14b{background: #FFD555;} .cb14c{background: #FFDF80;}
+.c14a{color: #FFCC33;} .c14b{color: #FFD555;} .c14c{color: #FFDF80;}
+
+/* Amarelo Ouro */
+.cb15a{background: #FFE42B;} .cb15b{background: #FFEA55;} .cb15c{background: #FFEF80;}
+.c15a{color: #FFE42B;} .c15b{color: #FFEA55;} .c15c{color: #FFEF80;}
+
+ /* Cinza Azulado */
+.cb16a{background: #434852;} .cb16b{background: #565C69;} .cb16c{background: #697181;}
+.c16a{color: #434852;} .c16b{color: #565C69;} .c16c{color: #697181;}
+
+/* Cinza Esverdeado */
+.cb17a{background: #4B4F46;} .cb17b{background: #61655A;} .cb17c{background: #767B6F;}
+.c17a{color: #4B4F46;} .c17b{color: #61655A;} .c17c{color: #767B6F;}
+
+/* Cinza Concreto */
+.cb18a{background: #7A7A7A;} .cb18b{background: #8F8F8F;} .cb18c{background: #A4A4A4;}
+.c18a{color: #7A7A7A;} .c18b{color: #8F8F8F;} .c18c{color: #A4A4A4;}
+
+/* Cinza Fumaça */
+.c19a{color: #BFBFBF;} .c19b{color: #D4D4D4;} .c19c{color: #E9E9E9;}
+.cb19a{background: #BFBFBF;} .cb19b{background: #D4D4D4;} .cb19c{background: #E9E9E9;}
+
+/* Branco Perolado */
+.cb20a{background: #F2F3F7;} .cb20b{background: #F6F7FB;} .cb20c{background: #FFFFFF;}
+.c20a{color: #F2F3F7;} .c20b{color: #F6F7FB;} .c20c{color: #FFFFFF;}
+
+/* Marrom Café */
+.cb21a{background: #4A3836;} .cb21b{background: #604846;} .cb21c{background: #725452;}
+.c21a{color: #4A3836;} .c21b{color: #604846;} .c21c{color: #725452;}
+
+/* Marrom Chocolate */
+.cb22a{background: #6D473E;} .cb22b{background: #7C5247;} .cb22c{background: #8A5A4F;}
+.c22a{color: #6D473E;} .c22b{color: #7C5247;} .c22c{color: #8A5A4F;}
+
+/* Marrom Caramelo */
+.cb23a{background: #997C5E;} .cb23b{background: #A5886B;} .cb23c{background: #B0977D;}
+.c23a{color: #997C5E;} .c23b{color: #A5886B;} .c23c{color: #B0977D;}
+
+/* Marrom Creme */
+.cb24a{background: #E4DDD3;} .cb24b{background: #E9E3DC;} .cb24c{background: #F4F1EE;}
+.c24a{color: #E4DDD3;} .c24b{color: #E9E3DC;} .c24c{color: #F4F1EE;}
