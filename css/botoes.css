@@ -1,0 +1,599 @@
+/*
+ *      ____  _____
+ *     |  _ \|  __ \     /\                                                _
+ *     | |_) | |__) |   /  \        ________  _________  ____  ____  _____(_)   _____
+ *     |  _ <|  _  /   / /\ \      / ___/ _ \/ ___/ __ \/ __ \/ __ \/ ___/ / | / / _ \
+ *     | |_) | | \ \  / ____ \    / /  /  __(__  ) /_/ / /_/ / / / (__  ) /| |/ /  __/
+ *     |____/|_|  \_\/_/    \_\  /_/   \___/____/ .___/\____/_/ /_/____/_/ |___/\___/
+ *                                             /_/
+ *
+*/
+
+/*=================================================================
+DADOS GERAIS / VERSÃO
+===================================================================
+Projeto: BRA responsive | framework responsive css
+URI: http://www.braresponsive.com.br
+Versão BETA: 0.8.2
+Atualizado em: 18.01.2017
+Autor: CarlosHPS Webdesigner
+Autor URI: http://www.carloshps.com.br
+Github: https://github.com/carloshps/BRA-responsive
+=================================================================*/
+
+/*=================================================================
+INDEX / SUMÁRIO
+===================================================================
+
+0. Reset Normalize.css (minify)
+1. Configuração Geral
+2. Preparação para o grid
+3. Coluna Padrão - Grid Flexível
+4. Grid Responsivo Phone 320px
+5. Grid Responsivo Smartphone 479px
+6. Grid Responsivo Tablet 480px a 767px
+7. Grid Responsivo Laptop 768px a 980px
+8. Grid Responsivo Desktop 981px a 1100px
+9. Grid Responsivo Desktop HD 1101px a 1300px
+10. Grid Responsivo Large Monitor 1301px
+11. Imagem e media responsive
+12. UI Kit Básico
+    12.1. Tipografia
+    12.2. Cores
+13. Elementos & Componentes
+	13.1. Botões, Links & Inputs
+	13.2. Listas
+    13.3. Elementos Inline
+    13.4. Tabelas
+14. Formatação Responsiva
+
+=================================================================*/
+
+/*=================================================================
+13. Elementos & Componentes | Elements & Components
+=================================================================*/
+
+/* 13.1 - Botões, Links e Inputs | buttons, links and inputs
+   ------------------------------------------------------------- */
+a, .link{color: #338AE1; text-decoration: none; }
+a:hover, .linkh{color: #AAC47B; text-decoration: none;}
+a:active, .linka{color: #FFEA55;}
+a:visited, .linkv{color: #338AE1;}
+h1 a:hover{text-decoration: none;}
+
+/*Botão default*/
+.btn, .btn-small, .btn-medium, .btn-large, .btn-full,
+input[type="submit"],input[type="button"],input[type="reset"]{
+   background-color: #8F8F8F;
+   border: 1px solid #d4d4d4;
+   border-radius: 0.250em;
+   color: #d4d4d4;
+   cursor: pointer;
+   display: inline-block;
+   font-family: "Libre Franklin", Arial, sans-serif;
+   font-weight: 400;
+   line-height: 1.125rem;
+   padding: 0.5em 0.875em;
+   text-decoration: none;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+/* espaçamento na base quando um botão estiver sob o outro */
+.btn ~ .btn {margin-bottom: 0.875em;}
+
+.btn:hover, .btn-3d:hover, input[type="submit"]:hover,input[type="button"]:hover,input[type="reset"]:hover
+{background-color: rgba(143,143,143,.2);color: #8f8f8f;}
+.btn:active, .btn-3d:active, input[type="submit"]:active,input[type="button"]:active,input[type="reset"]:active
+{background-color: rgba(255,255,255,.65);color: #d4d4d4;}
+.btn:visited, .btn-3d:visited, input[type="submit"]:visited,input[type="button"]:visited,input[type="reset"]:visited
+{background-color: rgba(143,143,143,.2);color: #d4d4d4;}
+.btn:focus, .btn-3d:focus, input[type="submit"]:focus,input[type="button"]:focus,input[type="reset"]:focus
+{opacity: .85; border: 1px solid #fff; color: #666; outline: 0;}
+
+
+/*botão com ícone*/
+.btn > i:before {margin-right: 0.625em;}
+.btn > i:before {font-weight: normal; font-style: normal;margin-right: 0.625em;vertical-align: baseline;}
+
+/* Tamanho dos Botões / buttons size */
+.btn-small { font-size: 0.75rem; line-height: 0.875rem; padding: 0.4em 0.6em;}
+.btn-medium{ font-size: 1.125rem; line-height: 1.375rem; padding: 0.688em 0.813em;}
+.btn-large { font-size: 1.375rem; line-height: 1.750rem; padding: 1em 1.250em;}
+
+/* Botão full width */
+.btn-full { display: block; width: 100%;}
+
+/* Tipos de Botões / buttons types */
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger,
+.btn-link{
+   color: #fff;
+   -webkit-transition: all 0.30s ease;
+   -moz-transition: all 0.30s ease;
+   transition: all 0.30s ease;
+}
+.btn-default:active,
+.btn-primary:active,
+.btn-success:active,
+.btn-info:active,
+.btn-warning:active,
+.btn-danger:active,
+.btn-link:active{
+   -webkit-box-shadow: inset 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+   -moz-box-shadow: inset 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+   box-shadow: inset 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+   outline: 0;
+}
+
+/* >> Botão Default << */
+.btn-default, .btn-default-3d { background-color: #fff; border-color: #7a7a7a; color: #8f8f8f;}
+.btn-default:hover, .btn-default-3d:hover, .btn-default-outline:hover, .btn-default-outline:focus { background-color: #d4d4d4; border-color: #bfbfbf;}
+.btn-default:active, .btn-default-3d:active, .btn-default-outline:active { background-color: #e9e9e9;}
+
+/* >> Botão Primário / button primary << */
+.btn-primary, .btn-primary-3d { background-color: #7DB5EC; border-color: #589FE7; color: #fff;}
+.btn-primary:hover, .btn-primary-3d:hover, .btn-primary-outline:hover  { background-color: #338AE1; border-color: #589FE7; color: #7DB5EC;}
+.btn-primary:active, .btn-primary-3d:active, .btn-primary-outline:active  { background-color: #589FE7; border-color: #589FE7; color:#fff;}
+
+/* >> Botão Sucesso / button success << */
+.btn-success, .btn-success-3d { background-color: #DDEA80; border-color: #D2E35B; color: #98B75E;}
+.btn-success:hover, .btn-success-3d:hover, .btn-success-outline:hover { background-color: #C9DD37; border-color: #D2E35B; color: #fff;}
+.btn-success:active, .btn-success-3d:active, .btn-success-outline:active { background-color: #D2E35B; border-color: #D2E35B; color: #fff;}
+
+/* >> Botão Informação / button info << */
+.btn-info, .btn-info-3d { background-color: #ACA3C7; border-color: #9488B7; color: #fff;}
+.btn-info:hover, .btn-info-3d:hover, .btn-info-outline:hover { background-color: #7C6DA7; border-color: #9488B7; color: #ACA3C7;}
+.btn-info:active, .btn-info-3d:active, .btn-info-outline:active  { background-color: #9488B7; border-color: #9488B7; color: #fff;}
+
+/* >> Botão Atenção / button warning << */
+.btn-warning, .btn-warning-3d { background-color: #FFEF80; border-color: #FFEA55; color: #B0977D;}
+.btn-warning:hover, .btn-warning-3d:hover, .btn-warning-outline:hover { background-color: #FFE42B; border-color: #FFEA55; color: #997C5E;}
+.btn-warning:active, .btn-warning-3d:active, .btn-warning-outline:active { background-color: #FFEA55; border-color: #FFEA55; color: #997C5E;}
+
+/* >> Botão Perigo / button danger << */
+.btn-danger, .btn-danger-3d { background-color: #EE8A7B; border-color: #E96856; color:#fff;}
+.btn-danger:hover, .btn-danger-3d:hover, .btn-danger-outline:hover { background-color: #E44630; border-color: #E96856; color:#fff;}
+.btn-danger:active, .btn-danger-3d:active, .btn-danger-outline:active { background-color: #E96856; border-color: #E96856; color:#fff;}
+
+/* >> Botão Link / button link << */
+.btn-link, .btn-link:hover, .btn-link:active{ background-color: transparent; color: #d4d4d4;}
+.btn-link:hover { border-color: #D4D4D4; color: #7A7A7A;}
+
+/* Estilos de Botões / buttons styles */
+.btn-square {
+   border-radius: 0;
+}
+.btn-round {
+   -webkit-border-radius: 3em;
+   -moz-border-radius: 3em;
+   -ms-border-radius: 3em;
+   -o-border-radius: 3em;
+   border-radius: 3em;
+}
+
+/* Botão 3D / 3D button */
+
+.btn-default-3d, .btn-3d{
+   -webkit-box-shadow: 0px 5px 0px 0px #7a7a7a;
+   -moz-box-shadow: 0px 5px 0px 0px #7a7a7a;
+   box-shadow: 0px 5px 0px 0px #7a7a7a;
+}
+
+.btn-primary-3d{
+   -webkit-box-shadow: 0px 5px 0px 0px #577DBD;
+   -moz-box-shadow: 0px 5px 0px 0px #577DBD;
+   box-shadow: 0px 5px 0px 0px #577DBD;
+}
+.btn-success-3d{
+   -webkit-box-shadow: 0px 5px 0px 0px #98B75E;
+   -moz-box-shadow: 0px 5px 0px 0px #98B75E;
+   box-shadow: 0px 5px 0px 0px #98B75E;
+}
+.btn-info-3d{
+   -webkit-box-shadow: 0px 5px 0px 0px #7C6DA7;
+   -moz-box-shadow: 0px 5px 0px 0px #7C6DA7;
+   box-shadow: 0px 5px 0px 0px #7C6DA7;
+}
+.btn-warning-3d{
+   -webkit-box-shadow: 0px 5px 0px 0px #FFCC33;
+   -moz-box-shadow: 0px 5px 0px 0px #FFCC33;
+   box-shadow: 0px 5px 0px 0px #FFCC33;
+}
+.btn-danger-3d{
+   -webkit-box-shadow: 0px 5px 0px 0px #E44630;
+   -moz-box-shadow: 0px 5px 0px 0px #E44630;
+   box-shadow: 0px 5px 0px 0px #E44630;
+}
+
+.btn-3d:active,
+.btn-default-3d:active,
+.btn-primary-3d:active,
+.btn-success-3d:active,
+.btn-info-3d:active,
+.btn-warning-3d:active,
+.btn-danger-3d:active {
+   -webkit-transform: translate(0px, 5px);
+   -moz-transform: translate(0px, 5px);
+   transform: translate(0px, 5px);
+   -webkit-box-shadow: 0px 1px 0px 0px;
+   -moz-box-shadow: 0px 1px 0px 0px;
+   box-shadow: 0px 1px 0px 0px;
+   opacity: .9;
+}
+
+/* Cores e Gradientes dos Botões / colors and gradients buttons */
+
+/* Verde Limão */
+.btn-verde-limao{background: #D2E35B; color: #fff;}
+.btn-verde-limao:hover{background: #C9DD37;}
+.btn-verde-limao:active{background: #DDEA80;}
+.btn-grad-cb1{
+   background: #C9DD37; /* For browsers that do not support gradients */
+   background: -webkit-linear-gradient(#C9DD37, #DDEA80); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(#C9DD37, #DDEA80); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(#C9DD37, #DDEA80); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(#C9DD37, #DDEA80); /* Standard syntax */
+   border: 1px solid #C9DD37;
+   color: #fff;
+}
+
+/* Verde Amazônia */
+.btn-verde-amazonia{background: #AAC47B; color: #fff;}
+.btn-verde-amazonia:hover{background: #98B75E; color:#fff;}
+.btn-verde-amazonia:active{background: #BDD198;}
+.btn-grad-cb2{
+   background: #98B75E;
+   background: -webkit-linear-gradient(#98B75E, #BDD198);
+   background: -o-linear-gradient(#98B75E, #BDD198);
+   background: -moz-linear-gradient(#98B75E, #BDD198);
+   background: linear-gradient(#98B75E, #BDD198);
+   border: 1px solid #98B75E;
+   color: #fff;
+}
+
+/* Verde Esmeralda */
+.btn-verde-esmeralda{background: #69D6C8; color: #fff;}
+.btn-verde-esmeralda:hover{background: #48CCBC;}
+.btn-verde-esmeralda:active{background: #8ADFD5;}
+.btn-grad-cb3{
+   background: #48CCBC;
+   background: -webkit-linear-gradient(#48CCBC, #8ADFD5);
+   background: -o-linear-gradient(#48CCBC, #8ADFD5);
+   background: -moz-linear-gradient(#48CCBC, #8ADFD5);
+   background: linear-gradient(#48CCBC, #8ADFD5);
+   border: 1px solid #48CCBC;
+   color: #fff;
+}
+
+/* Azul Jeans */
+.btn-azul-jeans{background: #577DBD; color: #fff;}
+.btn-azul-jeans:hover{background: #4268A8; color:#fff;}
+.btn-azul-jeans:active{background: #7695C9;}
+.btn-grad-cb4{
+   background: #4268A8;
+   background: -webkit-linear-gradient(#4268A8, #7695C9);
+   background: -o-linear-gradient(#4268A8, #7695C9);
+   background: -moz-linear-gradient(#4268A8, #7695C9);
+   background: linear-gradient(#4268A8, #7695C9);
+   border: 1px solid #4268A8;
+   color: #fff;
+}
+
+/* Azul Oceano */
+.btn-azul-oceano{background: #589FE7; color: #fff;}
+.btn-azul-oceano:hover{background: #338AE1; color:#fff;}
+.btn-azul-oceano:active{background: #7DB5EC;}
+.btn-grad-cb5{
+   background: #338AE1;
+   background: -webkit-linear-gradient(#338AE1, #7DB5EC);
+   background: -o-linear-gradient(#338AE1, #7DB5EC);
+   background: -moz-linear-gradient(#338AE1, #7DB5EC);
+   background: linear-gradient(#338AE1, #7DB5EC);
+   border: 1px solid #338AE1;
+   color: #fff;
+}
+
+/* Azul Piscina */
+.btn-azul-piscina{background: #49CBF5; color: #fff;}
+.btn-azul-piscina:hover{background: #21BFF3; color:#fff;}
+.btn-azul-piscina:active{background: #72D7F8;}
+.btn-grad-cb6{
+   background: #21BFF3;
+   background: -webkit-linear-gradient(#21BFF3, #72D7F8);
+   background: -o-linear-gradient(#21BFF3, #72D7F8);
+   background: -moz-linear-gradient(#21BFF3, #72D7F8);
+   background: linear-gradient(#21BFF3, #72D7F8);
+   border: 1px solid #21BFF3;
+   color: #fff;
+}
+
+/* Roxo Lavanda */
+.btn-roxo-lavanda{background: #9488B7; color: #fff;}
+.btn-roxo-lavanda:hover{background: #7C6DA7; color:#fff;}
+.btn-roxo-lavanda:active{background: #ACA3C7;}
+.btn-grad-cb7{
+   background: #7C6DA7;
+   background: -webkit-linear-gradient(#7C6DA7, #ACA3C7);
+   background: -o-linear-gradient(#7C6DA7, #ACA3C7);
+   background: -moz-linear-gradient(#7C6DA7, #ACA3C7);
+   background: linear-gradient(#7C6DA7, #ACA3C7);
+   border: 1px solid #7C6DA7;
+   color: #fff;
+}
+
+/* Roxo Lilás */
+.btn-roxo-lilas{background: #C877C8; color: #fff;}
+.btn-roxo-lilas:hover{background: #BB59BB; color:#fff;}
+.btn-roxo-lilas:active{background: #D595D5;}
+.btn-grad-cb8{
+   background: #BB59BB;
+   background: -webkit-linear-gradient(#BB59BB, #D595D5);
+   background: -o-linear-gradient(#BB59BB, #D595D5);
+   background: -moz-linear-gradient(#BB59BB, #D595D5);
+   background: linear-gradient(#BB59BB, #D595D5);
+   border: 1px solid #BB59BB;
+   color: #fff;
+}
+
+/* Roxo Vinho */
+.btn-roxo-vinho{background: #D6699F; color: #fff;}
+.btn-roxo-vinho:hover{background: #CC488A; color:#fff;}
+.btn-roxo-vinho:active{background: #DF8AB5;}
+.btn-grad-cb9{
+   background: #CC488A;
+   background: -webkit-linear-gradient(#CC488A, #DF8AB5);
+   background: -o-linear-gradient(#CC488A, #DF8AB5);
+   background: -moz-linear-gradient(#CC488A, #DF8AB5);
+   background: linear-gradient(#CC488A, #DF8AB5);
+   border: 1px solid #CC488A;
+   color: #fff;
+}
+
+/* Rosa Pink */
+.btn-rosa-pink{background: #EE5184; color: #fff;}
+.btn-rosa-pink:hover{background: #EA2B69; color:#fff;}
+.btn-rosa-pink:active{background: #F1789F;}
+.btn-grad-cb10{
+   background: #EA2B69;
+   background: -webkit-linear-gradient(#EA2B69, #F1789F);
+   background: -o-linear-gradient(#EA2B69, #F1789F);
+   background: -moz-linear-gradient(#EA2B69, #F1789F);
+   background: linear-gradient(#EA2B69, #F1789F);
+   border: 1px solid #EA2B69;
+   color: #fff;
+}
+
+/* Vermelho Telha */
+.btn-vermelho-telha{background: #D66969; color: #fff;}
+.btn-vermelho-telha:hover{background: #CC4848; color:#fff;}
+.btn-vermelho-telha:active{background: #DF8A8A;}
+.btn-grad-cb11{
+   background: #CC4848;
+   background: -webkit-linear-gradient(#CC4848, #DF8A8A);
+   background: -o-linear-gradient(#CC4848, #DF8A8A);
+   background: -moz-linear-gradient(#CC4848, #DF8A8A);
+   background: linear-gradient(#CC4848, #DF8A8A);
+   border: 1px solid #CC4848;
+   color: #fff;
+}
+
+/* Vermelho Vivo */
+.btn-vermelho-vivo{background: #E96856; color: #fff;}
+.btn-vermelho-vivo:hover{background: #E44630; color:#fff;}
+.btn-vermelho-vivo:active{background: #EE8A7B;}
+.btn-grad-cb12{
+   background: #E44630;
+   background: -webkit-linear-gradient(#E44630, #EE8A7B);
+   background: -o-linear-gradient(#E44630, #EE8A7B);
+   background: -moz-linear-gradient(#E44630, #EE8A7B);
+   background: linear-gradient(#E44630, #EE8A7B);
+   border: 1px solid #E44630;
+   color: #fff;
+}
+
+/* Laranja Marte */
+.btn-laranja-marte{background: #FFAA55; color: #fff;}
+.btn-laranja-marte:hover{background: #FF952B; color:#fff;}
+.btn-laranja-marte:active{background: #FFBF80;}
+.btn-grad-cb13{
+   background: #FF952B;
+   background: -webkit-linear-gradient(#FF952B, #FFBF80);
+   background: -o-linear-gradient(#FF952B, #FFBF80);
+   background: -moz-linear-gradient(#FF952B, #FFBF80);
+   background: linear-gradient(#FF952B, #FFBF80);
+   border: 1px solid #FF952B;
+   color: #fff;
+}
+
+/* Laranja Solar */
+.btn-laranja-solar{background: #FFD555; color: #697181;}
+.btn-laranja-solar:hover{background: #FFCC33; color:#697181;}
+.btn-laranja-solar:active{background: #FFDF80;}
+.btn-grad-cb14{
+   background: #FFCC33;
+   background: -webkit-linear-gradient(#FFCC33, #FFDF80);
+   background: -o-linear-gradient(#FFCC33, #FFDF80);
+   background: -moz-linear-gradient(#FFCC33, #FFDF80);
+   background: linear-gradient(#FFCC33, #FFDF80);
+   border: 1px solid #FFCC33;
+   color: #fff;
+}
+
+/* Amarelo Ouro */
+.btn-amarelo-ouro{background: #FFEA55; color: #697181;}
+.btn-amarelo-ouro:hover{background: #FFE42B; color:#697181;}
+.btn-amarelo-ouro:active{background: #FFEF80;}
+.btn-grad-cb15{
+   background: #FFE42B;
+   background: -webkit-linear-gradient(#FFE42B, #FFEF80);
+   background: -o-linear-gradient(#FFE42B, #FFEF80);
+   background: -moz-linear-gradient(#FFE42B, #FFEF80);
+   background: linear-gradient(#FFE42B, #FFEF80);
+   border: 1px solid #FFE42B;
+}
+
+/* Cinza Azulado */
+.btn-cinza-azulado{background: #565C69; color: #fff;}
+.btn-cinza-azulado:hover{background: #434852; color:#fff;}
+.btn-cinza-azulado:active{background: #697181;}
+.btn-grad-cb16{
+   background: #434852;
+   background: -webkit-linear-gradient(#434852, #697181);
+   background: -o-linear-gradient(#434852, #697181);
+   background: -moz-linear-gradient(#434852, #697181);
+   background: linear-gradient(#434852, #697181);
+   border: 1px solid #434852;
+   color: #fff;
+}
+
+/* Cinza Esverdeado */
+.btn-cinza-esverdeado{background: #61655A; color: #fff;}
+.btn-cinza-esverdeado:hover{background: #4B4F46; color:#fff;}
+.btn-cinza-esverdeado:active{background: #767B6F;}
+.btn-grad-cb17{
+   background: #4B4F46;
+   background: -webkit-linear-gradient(#4B4F46, #767B6F);
+   background: -o-linear-gradient(#4B4F46, #767B6F);
+   background: -moz-linear-gradient(#4B4F46, #767B6F);
+   background: linear-gradient(#4B4F46, #767B6F);
+   border: 1px solid #4B4F46;
+   color: #fff;
+}
+
+/* Cinza Concreto */
+.btn-cinza-concreto{background: #8F8F8F; color: #fff;}
+.btn-cinza-concreto:hover{background: #7A7A7A; color:#fff;}
+.btn-cinza-concreto:active{background: #A4A4A4;}
+.btn-grad-cb18{
+   background: #7A7A7A;
+   background: -webkit-linear-gradient(#7A7A7A, #A4A4A4);
+   background: -o-linear-gradient(#7A7A7A, #A4A4A4);
+   background: -moz-linear-gradient(#7A7A7A, #A4A4A4);
+   background: linear-gradient(#7A7A7A, #A4A4A4);
+   border: 1px solid #7A7A7A;
+   color: #fff;
+}
+
+/* Cinza Fumaça */
+.btn-cinza-fumaca{background: #D4D4D4; color: #697181;}
+.btn-cinza-fumaca:hover{background: #BFBFBF; color:#697181;}
+.btn-cinza-fumaca:active{background: #E9E9E9;}
+.btn-grad-cb19{
+   background: #BFBFBF;
+   background: -webkit-linear-gradient(#BFBFBF, #E9E9E9);
+   background: -o-linear-gradient(#BFBFBF, #E9E9E9);
+   background: -moz-linear-gradient(#BFBFBF, #E9E9E9);
+   background: linear-gradient(#BFBFBF, #E9E9E9);
+   border: 1px solid #BFBFBF;
+    color: #4B4F46;
+}
+
+/* Branco Perolado */
+.btn-branco-perolado{background: #F6F7FB; color: #697181;}
+.btn-branco-perolado:hover{background: #F2F3F7; color:#697181;}
+.btn-branco-perolado:active{background: #FFFFFF;}
+.btn-grad-cb20{
+   background: #F2F3F7;
+   background: -webkit-linear-gradient(#F2F3F7, #FFF);
+   background: -o-linear-gradient(#F2F3F7, #FFF);
+   background: -moz-linear-gradient(#F2F3F7, #FFF);
+   background: linear-gradient(#F2F3F7, #FFF);
+   border: 1px solid #F2F3F7;
+}
+
+/* Marrom Café */
+.btn-marrom-cafe{background: #604846; color: #FFF;}
+.btn-marrom-cafe:hover{background: #4A3836; color:#FFF;}
+.btn-marrom-cafe:active{background: #725452;}
+.btn-grad-cb21{
+   background: #4A3836;
+   background: -webkit-linear-gradient(#4A3836, #725452);
+   background: -o-linear-gradient(#4A3836, #725452);
+   background: -moz-linear-gradient(#4A3836, #725452);
+   background: linear-gradient(#4A3836, #725452);
+   border: 1px solid #4A3836;
+}
+
+/* Marrom Chocolate */
+.btn-marrom-chocolate{background: #7C5247; color: #FFF;}
+.btn-marrom-chocolate:hover{background: #6D473E; color:#FFF;}
+.btn-marrom-chocolate:active{background: #8A5A4F;}
+.btn-grad-cb22{
+   background: #6D473E;
+   background: -webkit-linear-gradient(#6D473E, #8A5A4F);
+   background: -o-linear-gradient(#6D473E, #8A5A4F);
+   background: -moz-linear-gradient(#6D473E, #8A5A4F);
+   background: linear-gradient(#6D473E, #8A5A4F);
+   border: 1px solid #6D473E;
+}
+
+/* Marrom Caramelo */
+.btn-marrom-caramelo{background: #A5886B; color: #FFF;}
+.btn-marrom-caramelo:hover{background: #997C5E; color:#FFF;}
+.btn-marrom-caramelo:active{background: #B0977D;}
+.btn-grad-cb23{
+   background: #997C5E;
+   background: -webkit-linear-gradient(#997C5E, #B0977D);
+   background: -o-linear-gradient(#997C5E, #B0977D);
+   background: -moz-linear-gradient(#997C5E, #B0977D);
+   background: linear-gradient(#997C5E, #B0977D);
+   border: 1px solid #997C5E;
+}
+
+/* Marrom Creme */
+.btn-marrom-creme{background: #E9E3DC; color: #604846;}
+.btn-marrom-creme:hover{background: #E4DDD3; color:#604846;}
+.btn-marrom-creme:active{background: #F4F1EE;}
+.btn-grad-cb24{
+   background: #E4DDD3;
+   background: -webkit-linear-gradient(#E4DDD3, #F4F1EE);
+   background: -o-linear-gradient(#E4DDD3, #F4F1EE);
+   background: -moz-linear-gradient(#E4DDD3, #F4F1EE);
+   background: linear-gradient(#E4DDD3, #F4F1EE);
+   border: 1px solid #E4DDD3;
+    color:#4A3836;
+}
+
+   .btn-grad-cb1:hover, .btn-grad-cb2:hover, .btn-grad-cb3:hover, .btn-grad-cb4:hover, .btn-grad-cb5:hover, .btn-grad-cb6:hover, .btn-grad-cb7:hover, .btn-grad-cb8:hover, .btn-grad-cb9:hover, .btn-grad-cb10:hover, .btn-grad-cb11:hover, .btn-grad-cb12:hover, .btn-grad-cb13:hover, .btn-grad-cb14:hover, .btn-grad-cb15:hover, .btn-grad-cb16:hover, .btn-grad-cb17:hover, .btn-grad-cb18:hover, .btn-grad-cb19:hover, .btn-grad-cb20:hover, .btn-grad-cb21:hover, .btn-grad-cb22:hover, .btn-grad-cb23:hover, .btn-grad-cb24:hover{
+   color: rgba(0, 0, 0, 0.65) !important; opacity: 0.85;
+}
+
+/* Botão Outline / outline button */
+
+.btn-default-outline,
+.btn-primary-outline,
+.btn-success-outline,
+.btn-info-outline,
+.btn-warning-outline,
+.btn-danger-outline{
+    background: transparent;
+    text-shadow: none;
+    transition: all 0.30s ease;
+    -webkit-transition: all 0.30s ease;
+    -moz-transition: all 0.30s ease;
+    -o-transition: all 0.30s ease;
+}
+
+/* Botão default Outline */
+.btn-default-outline { border: 1px solid #7a7a7a; color: #8f8f8f;}
+
+/* Botão primário Outline */
+.btn-primary-outline{ border: 1px solid #7DB5EC; color: #7DB5EC;}
+
+/* Botão sucesso Outline */
+.btn-success-outline{ border: 1px solid #98B75E; color: #98B75E;}
+
+/* Botão informação Outline */
+.btn-info-outline{ border: 1px solid #9488B7; color: #9488B7;}
+
+/* Botão atenção Outline */
+.btn-warning-outline{ border: 1px solid #FFE42B; color: #FFE42B;}
+
+/* Botão perigo Outline */
+.btn-danger-outline{ border: 1px solid #EE8A7B; color: #EE8A7B;}
