@@ -1,3 +1,8 @@
+21.jan.2017 - versão 0.8.2
+------------------------------
+- Melhoria da semântica das tabelas
+- Correção de bugs de formatação
+
 18.jan.2017 - versão 0.8.1
 ------------------------------
 - Criação da página Tabelas do BRA responsive
