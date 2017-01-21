@@ -65,6 +65,6 @@ Redimensione a janela do seu navegador e/ou visualize os demos abaixo em disposi
 
 ## Direitos autoriais e licença de uso
 
-Copyright &copy; 2016 - Liberado sob a [licença MIT](https://opensource.org/licenses/MIT).
+Copyright &copy; 2016-2017 - Liberado sob a [licença MIT](https://opensource.org/licenses/MIT).
 
 Todos os direitos reservados a [CarlosHPS Webdesigner](http://www.carloshps.com.br).
