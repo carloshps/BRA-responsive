@@ -15,7 +15,7 @@ DADOS GERAIS / VERSÃO
 Projeto: BRA responsive | framework responsive css
 URI: http://www.braresponsive.com.br
 Versão BETA: 0.8.2
-Atualizado em: 18.01.2017
+Atualizado em: 21.01.2017
 Autor: CarlosHPS Webdesigner
 Autor URI: http://www.carloshps.com.br
 Github: https://github.com/carloshps/BRA-responsive
@@ -74,86 +74,89 @@ td:last-child {
 
 /* Tabela com bordas horizontais */
 thead,
-.borderh tbody tr
+.table-borderh tbody tr
 {border-bottom: 0.01rem solid #E9E9E9;}
 
 /* Tabela com todas as bordas */
-.border-full tr,
-.border-full td,
-.border-full th{border: 0.01rem solid #E9E9E9;}
+.table-border-full tr,
+.table-border-full td,
+.table-border-full th{border: 0.01rem solid #E9E9E9;}
 
 /* Tabela Hover */
-table.hover > tbody > tr {
+table.table-hover > tbody > tr {
   transition: background-color .35s ease;
   -webkit-transition: background-color 0.35s ease;
   -moz-transition: background-color 0.35s ease;
 }
 
-table.hover > tbody > tr:hover {
+table.table-hover > tbody > tr:hover {
   background-color: #f4f4f4;
 }
 
 /* Tabela Zebrada */
-table.striped > tbody > tr:nth-child(odd) {
+table.table-striped > tbody > tr:nth-child(odd) {
   background-color: #f4f4f4;
 }
 
 /* Tabela Responsiva */
 @media only screen and (max-width: 992px){
-.responsive-table {
+.table-responsive {
     border-collapse: collapse;
     border-spacing: 0;
     display: block;
     position: relative;
     width: 100%;
   }
-  .responsive-table td:empty:before {
+  .table-responsive td:empty:before {
     content: '\00a0'; /* espaço */
   }
-  .responsive-table th,
-  .responsive-table td {
+  .table-responsive th,
+  .table-responsive td {
     margin: 0;
     vertical-align: top;
   }
-  .responsive-table th {
+  .table-responsive th {
     text-align: left;
   }
-  .responsive-table thead {
+  .table-responsive thead {
     background-color: #f9f9f9;
     display: block;
     float: left;
   }
-  .responsive-table thead tr {
+  .table-responsive thead tr {
     display: block;
     padding: 0 0.625rem 0 0;
   }
-  .responsive-table thead tr th::before {
+  .table-responsive thead tr th::before {
     content: "\00a0";
   }
-  .responsive-table tbody {
+  .table-responsive tbody {
     display: block;
     position: relative;
     overflow-x: auto;
     white-space: nowrap;
     width: auto;
   }
-  .responsive-table tbody tr {
+  .table-responsive tfoot {
+        display: none;
+  }
+  .table-responsive tbody tr {
     display: inline-block;
     vertical-align: top;
   }
-  .responsive-table th {
+  .table-responsive th {
     display: block;
     text-align: right;
   }
-  .responsive-table td {
+  .table-responsive td {
     display: block;
     min-height: 1.125em;
     text-align: left;
   }
-  .responsive-table tr {
+  .table-responsive tr {
     padding: 0 0.625em;
   }
-  .responsive-table thead {
+  .table-responsive thead {
     border: 0;
     border-right: 0.0625em solid #d4d4d4;
   }
