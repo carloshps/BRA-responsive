@@ -1,5 +1,5 @@
 # BRA responsive BETA 0.8.2
-##### 21.01.2017
+##### Atualizado em 21.01.2017
 
 ![BRA responsive](https://github.com/carloshps/BRA-responsive/blob/master/img/bra-responsive-framework-carloshps-github.png)
 
